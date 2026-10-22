@@ -6,8 +6,8 @@ concurrency:
 
 on:
   schedule:
-    - cron: '0 * * * *'  # 毎時0分に実行 (UTC)
-  workflow_dispatch:     # 手動実行ボタン
+    - cron: '0 * * * *'
+  workflow_dispatch:
   push:
     branches: [main]
 
@@ -21,7 +21,6 @@ jobs:
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Python
         uses: actions/setup-python@v6
@@ -35,10 +34,10 @@ jobs:
           pip install -r requirements.txt
           mkdir -p docs/data
 
-      - name: Run scraper (multi-date + GMT)
+      - name: Run scraper
         run: python scripts/scraper.py
 
-      - name: Commit y push con rebase
+      - name: Commit y push (resolucion automatica de conflictos)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -46,25 +45,34 @@ jobs:
           git add docs/programacion.json docs/data/
           
           if git diff --staged --quiet; then
-            echo "No hay cambios para commitear"
+            echo "No hay cambios"
             exit 0
           fi
           
           git commit -m "chore: actualizar programacion $(date -u +%Y-%m-%dT%H:%M:00Z)"
           
-          # non-fast-forward エラー対策: リモートを取り込んでからpush
-          echo "Haciendo pull --rebase..."
-          git pull --rebase origin main || {
-            echo "Rebase conflict, aborting and trying merge strategy"
-            git rebase --abort
-            git pull origin main --no-rebase
-          }
+          # 1. まずrebaseを試す
+          echo "Intentando pull --rebase..."
+          if git pull --rebase origin main; then
+            echo "Rebase exitoso"
+          else
+            echo "Conflicto en rebase, resolviendo con datos locales..."
+            git rebase --abort || true
+            
+            # 2. rebase失敗時は、ローカルのJSONを優先してマージ
+            # ours = 今作った新しい番組表を優先
+            git fetch origin main
+            git merge origin/main --no-edit -X ours || {
+              # それでもダメなら強制的にoursで解決
+              echo "Resolviendo conflictos manualmente..."
+              git checkout --ours -- docs/programacion.json docs/data/index.json || true
+              git checkout --theirs -- docs/data/2026-*.json || true
+              # 新しく生成したファイルを優先
+              python scripts/scraper.py
+              git add docs/programacion.json docs/data/
+              git commit --no-edit || true
+            }
+          fi
           
           git push origin main
-
-      - name: Summary
-        run: |
-          echo "### ✅ Actualización completada" >> $GITHUB_STEP_SUMMARY
-          echo "- Fecha: $(date -u)" >> $GITHUB_STEP_SUMMARY
-          echo "- Archivos: $(ls docs/data/*.json | wc -l) dias" >> $GITHUB_STEP_SUMMARY
-          cat docs/data/index.json >> $GITHUB_STEP_SUMMARY
+          echo "Push exitoso!"

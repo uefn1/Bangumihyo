@@ -1,25 +1,25 @@
 {
-  "generated_at_utc": "2026-10-22T17:12:45.276524+00:00",
+  "generated_at_utc": "2026-10-22T17:15:45.007910+00:00",
   "sources": {
     "mi.tv": {
       "status": "empty",
       "url": "https://mi.tv/py/canales/tigo-sports",
       "count": 0,
-      "fetched_at": "2026-10-22T17:12:44.638887+00:00",
+      "fetched_at": "2026-10-22T17:15:43.525198+00:00",
       "programs": []
     },
     "APF Oficial": {
       "status": "empty",
       "url": "https://www.apf.org.py",
       "count": 0,
-      "fetched_at": "2026-10-22T17:12:44.723362+00:00",
+      "fetched_at": "2026-10-22T17:15:44.502252+00:00",
       "programs": []
     },
     "Versus": {
       "status": "empty",
       "url": "https://www.versus.com.py",
       "count": 0,
-      "fetched_at": "2026-10-22T17:12:45.274195+00:00",
+      "fetched_at": "2026-10-22T17:15:45.007326+00:00",
       "programs": []
     }
   }

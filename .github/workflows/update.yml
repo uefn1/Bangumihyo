@@ -7,34 +7,30 @@ on:
 
 jobs:
   update:
-    # ubuntu-latestの移行警告を避けるため明示的に固定
     runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
-      # v4 -> v5 で Node.js 24対応
       - uses: actions/checkout@v5
-
-      # v5 -> v6 で Node.js 24対応
-      - name: Setup Python with cache
-        uses: actions/setup-python@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
           cache: 'pip'
-          # ↓ ここで明示的にパスを指定すると「No file matched」エラーが消える
-          cache-dependency-path: |
-            requirements.txt
-            **/requirements.txt
+          cache-dependency-path: requirements.txt
 
-      - name: Install deps
-        run: pip install -q -r requirements.txt
+      - run: |
+          pip install -q -r requirements.txt
+          playwright install chromium --with-deps
 
-      - name: Scrape
+      - name: Download sources (save raw html)
+        run: python scripts/download.py
+
+      - name: Parse from downloaded files
         run: python scripts/scrape.py
 
-      - name: Commit
+      - name: Commit raw + json
         run: |
           git config user.name "bot"
           git config user.email "bot@github"
-          git add docs/data.json
-          git diff --staged --quiet || (git commit -m "update schedule" && git push)
+          git add docs/raw/ docs/data.json
+          git diff --staged --quiet || (git commit -m "update raw and schedule" && git push)

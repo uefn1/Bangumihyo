@@ -1,5 +1,5 @@
 {
-  "fecha_actualizacion": "2026-10-22T18:40:05.686171Z",
+  "fecha_actualizacion": "2026-10-22T18:42:51.089757Z",
   "rango": "2026-10-22 to 2026-10-28",
   "fechas_disponibles": [
     "2026-10-22",
@@ -16,17 +16,101 @@
       "dia_semana": "Thursday",
       "programacion": [
         {
+          "hora_pyt": "07:00",
+          "titulo": "Buenos Días Fútbol - Noticias",
+          "canal": "Tigo Sports",
+          "categoria": "Noticias",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "08:30",
+          "titulo": "El Tablón - Repetición",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "10:00",
+          "titulo": "Fútbol a lo Grande - Debate",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "11:30",
+          "titulo": "Copa Paraguay - Mejores Goles",
+          "canal": "Tigo Sports +",
+          "categoria": "Copa",
+          "en_vivo": false
+        },
+        {
           "hora_pyt": "12:00",
           "titulo": "Fútbol a lo Grande",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "13:00",
+          "titulo": "Noticiero Deportivo",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Noticias",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "14:00",
+          "titulo": "Intermedia: Sportivo Trinidense vs General Caballero",
+          "canal": "Tigo Sports +",
+          "categoria": "Intermedia",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "16:00",
+          "titulo": "Fútbol Formativas - Sub 20",
+          "canal": "Tigo Sports",
+          "categoria": "Formativas",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "18:00",
+          "titulo": "La Previa - Análisis Jornada",
+          "canal": "Tigo Sports",
+          "categoria": "Previa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "19:00",
+          "titulo": "Copa Libertadores - En Vivo: 【entity-River¦canonical_name=River Plate】 vs Boca",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+          "categoria": "Internacional",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "21:15",
+          "titulo": "El Tablón - Análisis Completo",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Programa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "22:30",
+          "titulo": "Fútbol a lo Grande - Noche",
           "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
           "categoria": "Programa",
           "en_vivo": false
         },
         {
-          "hora_pyt": "20:00",
-          "titulo": "Copa Libertadores - Repetición",
-          "canal": "Tigo Sports",
-          "categoria": "Internacional",
+          "hora_pyt": "23:30",
+          "titulo": "Polideportivo - Resumen del Día",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+          "categoria": "Polideportivo",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "00:30",
+          "titulo": "Repetición: Copa Libertadores",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Repetición",
           "en_vivo": false
         }
       ]
@@ -36,17 +120,101 @@
       "dia_semana": "Friday",
       "programacion": [
         {
+          "hora_pyt": "07:00",
+          "titulo": "Buenos Días Fútbol - Noticias",
+          "canal": "Tigo Sports",
+          "categoria": "Noticias",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "08:30",
+          "titulo": "El Tablón - Repetición",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "10:00",
+          "titulo": "Fútbol a lo Grande - Debate",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "11:30",
+          "titulo": "Copa Paraguay - Mejores Goles",
+          "canal": "Tigo Sports +",
+          "categoria": "Copa",
+          "en_vivo": false
+        },
+        {
           "hora_pyt": "12:00",
           "titulo": "Fútbol a lo Grande",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "13:00",
+          "titulo": "Noticiero Deportivo",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Noticias",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "14:00",
+          "titulo": "Intermedia: Sportivo Trinidense vs General Caballero",
+          "canal": "Tigo Sports +",
+          "categoria": "Intermedia",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "16:00",
+          "titulo": "Fútbol Formativas - Sub 20",
+          "canal": "Tigo Sports",
+          "categoria": "Formativas",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "18:00",
+          "titulo": "La Previa - Análisis Jornada",
+          "canal": "Tigo Sports",
+          "categoria": "Previa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "19:00",
+          "titulo": "Copa Libertadores - En Vivo: 【entity-River¦canonical_name=River Plate】 vs Boca",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+          "categoria": "Internacional",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "21:15",
+          "titulo": "El Tablón - Análisis Completo",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Programa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "22:30",
+          "titulo": "Fútbol a lo Grande - Noche",
           "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
           "categoria": "Programa",
           "en_vivo": false
         },
         {
-          "hora_pyt": "20:00",
-          "titulo": "Copa Libertadores - Repetición",
-          "canal": "Tigo Sports",
-          "categoria": "Internacional",
+          "hora_pyt": "23:30",
+          "titulo": "Polideportivo - Resumen del Día",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+          "categoria": "Polideportivo",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "00:30",
+          "titulo": "Repetición: Copa Libertadores",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Repetición",
           "en_vivo": false
         }
       ]
@@ -56,24 +224,73 @@
       "dia_semana": "Saturday",
       "programacion": [
         {
+          "hora_pyt": "08:00",
+          "titulo": "Repaso Fecha Anterior - Primera División",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Resumen",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "09:30",
+          "titulo": "Fútbol a lo Grande - Previa",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "11:00",
+          "titulo": "Tercera División: Resistencia vs Tacuary",
+          "canal": "Tigo Sports +",
+          "categoria": "Ascenso",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "13:00",
+          "titulo": "Fútbol Femenino: 【entity-Olimpia¦canonical_name=Olimpia】 vs Cerro Porteño",
+          "canal": "Tigo Sports",
+          "categoria": "Femenino",
+          "en_vivo": true
+        },
+        {
           "hora_pyt": "15:00",
           "titulo": "Cerro Porteño vs 【entity-Olimpia¦canonical_name=Olimpia】 - Superclásico",
-          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "canal": "Tigo Sports",
           "categoria": "Primera División",
           "en_vivo": true
         },
         {
           "hora_pyt": "17:30",
           "titulo": "Libertad vs Guaraní",
-          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+          "canal": "Tigo Sports +",
           "categoria": "Primera División",
           "en_vivo": true
         },
         {
-          "hora_pyt": "19:30",
-          "titulo": "El Tablón",
-          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "hora_pyt": "19:45",
+          "titulo": "El Tablón - Post Partido Superclásico",
+          "canal": "Tigo Sports",
           "categoria": "Programa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "21:30",
+          "titulo": "Copa Libertadores - Compacto Goles",
+          "canal": "Tigo Sports",
+          "categoria": "Internacional",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "22:30",
+          "titulo": "Polideportivo",
+          "canal": "Tigo Sports +",
+          "categoria": "Polideportivo",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "23:30",
+          "titulo": "Repetición: Superclásico",
+          "canal": "Tigo Sports",
+          "categoria": "Repetición",
           "en_vivo": false
         }
       ]
@@ -83,24 +300,73 @@
       "dia_semana": "Sunday",
       "programacion": [
         {
+          "hora_pyt": "08:00",
+          "titulo": "Repaso Fecha Anterior - Primera División",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Resumen",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "09:30",
+          "titulo": "Fútbol a lo Grande - Previa",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "11:00",
+          "titulo": "Tercera División: Resistencia vs Tacuary",
+          "canal": "Tigo Sports +",
+          "categoria": "Ascenso",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "13:00",
+          "titulo": "Fútbol Femenino: 【entity-Olimpia¦canonical_name=Olimpia】 vs Cerro Porteño",
+          "canal": "Tigo Sports",
+          "categoria": "Femenino",
+          "en_vivo": true
+        },
+        {
           "hora_pyt": "15:00",
           "titulo": "Cerro Porteño vs 【entity-Olimpia¦canonical_name=Olimpia】 - Superclásico",
-          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "canal": "Tigo Sports",
           "categoria": "Primera División",
           "en_vivo": true
         },
         {
           "hora_pyt": "17:30",
           "titulo": "Libertad vs Guaraní",
-          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+          "canal": "Tigo Sports +",
           "categoria": "Primera División",
           "en_vivo": true
         },
         {
-          "hora_pyt": "19:30",
-          "titulo": "El Tablón",
-          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "hora_pyt": "19:45",
+          "titulo": "El Tablón - Post Partido Superclásico",
+          "canal": "Tigo Sports",
           "categoria": "Programa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "21:30",
+          "titulo": "Copa Libertadores - Compacto Goles",
+          "canal": "Tigo Sports",
+          "categoria": "Internacional",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "22:30",
+          "titulo": "Polideportivo",
+          "canal": "Tigo Sports +",
+          "categoria": "Polideportivo",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "23:30",
+          "titulo": "Repetición: Superclásico",
+          "canal": "Tigo Sports",
+          "categoria": "Repetición",
           "en_vivo": false
         }
       ]
@@ -110,17 +376,101 @@
       "dia_semana": "Monday",
       "programacion": [
         {
+          "hora_pyt": "07:00",
+          "titulo": "Buenos Días Fútbol - Noticias",
+          "canal": "Tigo Sports",
+          "categoria": "Noticias",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "08:30",
+          "titulo": "El Tablón - Repetición",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "10:00",
+          "titulo": "Fútbol a lo Grande - Debate",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "11:30",
+          "titulo": "Copa Paraguay - Mejores Goles",
+          "canal": "Tigo Sports +",
+          "categoria": "Copa",
+          "en_vivo": false
+        },
+        {
           "hora_pyt": "12:00",
           "titulo": "Fútbol a lo Grande",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "13:00",
+          "titulo": "Noticiero Deportivo",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Noticias",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "14:00",
+          "titulo": "Intermedia: Sportivo Trinidense vs General Caballero",
+          "canal": "Tigo Sports +",
+          "categoria": "Intermedia",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "16:00",
+          "titulo": "Fútbol Formativas - Sub 20",
+          "canal": "Tigo Sports",
+          "categoria": "Formativas",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "18:00",
+          "titulo": "La Previa - Análisis Jornada",
+          "canal": "Tigo Sports",
+          "categoria": "Previa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "19:00",
+          "titulo": "Copa Libertadores - En Vivo: 【entity-River¦canonical_name=River Plate】 vs Boca",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+          "categoria": "Internacional",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "21:15",
+          "titulo": "El Tablón - Análisis Completo",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Programa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "22:30",
+          "titulo": "Fútbol a lo Grande - Noche",
           "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
           "categoria": "Programa",
           "en_vivo": false
         },
         {
-          "hora_pyt": "20:00",
-          "titulo": "Copa Libertadores - Repetición",
-          "canal": "Tigo Sports",
-          "categoria": "Internacional",
+          "hora_pyt": "23:30",
+          "titulo": "Polideportivo - Resumen del Día",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+          "categoria": "Polideportivo",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "00:30",
+          "titulo": "Repetición: Copa Libertadores",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Repetición",
           "en_vivo": false
         }
       ]
@@ -130,17 +480,101 @@
       "dia_semana": "Tuesday",
       "programacion": [
         {
+          "hora_pyt": "07:00",
+          "titulo": "Buenos Días Fútbol - Noticias",
+          "canal": "Tigo Sports",
+          "categoria": "Noticias",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "08:30",
+          "titulo": "El Tablón - Repetición",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "10:00",
+          "titulo": "Fútbol a lo Grande - Debate",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "11:30",
+          "titulo": "Copa Paraguay - Mejores Goles",
+          "canal": "Tigo Sports +",
+          "categoria": "Copa",
+          "en_vivo": false
+        },
+        {
           "hora_pyt": "12:00",
           "titulo": "Fútbol a lo Grande",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "13:00",
+          "titulo": "Noticiero Deportivo",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Noticias",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "14:00",
+          "titulo": "Intermedia: Sportivo Trinidense vs General Caballero",
+          "canal": "Tigo Sports +",
+          "categoria": "Intermedia",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "16:00",
+          "titulo": "Fútbol Formativas - Sub 20",
+          "canal": "Tigo Sports",
+          "categoria": "Formativas",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "18:00",
+          "titulo": "La Previa - Análisis Jornada",
+          "canal": "Tigo Sports",
+          "categoria": "Previa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "19:00",
+          "titulo": "Copa Libertadores - En Vivo: 【entity-River¦canonical_name=River Plate】 vs Boca",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+          "categoria": "Internacional",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "21:15",
+          "titulo": "El Tablón - Análisis Completo",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Programa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "22:30",
+          "titulo": "Fútbol a lo Grande - Noche",
           "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
           "categoria": "Programa",
           "en_vivo": false
         },
         {
-          "hora_pyt": "20:00",
-          "titulo": "Copa Libertadores - Repetición",
-          "canal": "Tigo Sports",
-          "categoria": "Internacional",
+          "hora_pyt": "23:30",
+          "titulo": "Polideportivo - Resumen del Día",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+          "categoria": "Polideportivo",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "00:30",
+          "titulo": "Repetición: Copa Libertadores",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Repetición",
           "en_vivo": false
         }
       ]
@@ -150,17 +584,101 @@
       "dia_semana": "Wednesday",
       "programacion": [
         {
+          "hora_pyt": "07:00",
+          "titulo": "Buenos Días Fútbol - Noticias",
+          "canal": "Tigo Sports",
+          "categoria": "Noticias",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "08:30",
+          "titulo": "El Tablón - Repetición",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "10:00",
+          "titulo": "Fútbol a lo Grande - Debate",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "11:30",
+          "titulo": "Copa Paraguay - Mejores Goles",
+          "canal": "Tigo Sports +",
+          "categoria": "Copa",
+          "en_vivo": false
+        },
+        {
           "hora_pyt": "12:00",
           "titulo": "Fútbol a lo Grande",
+          "canal": "Tigo Sports",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "13:00",
+          "titulo": "Noticiero Deportivo",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Noticias",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "14:00",
+          "titulo": "Intermedia: Sportivo Trinidense vs General Caballero",
+          "canal": "Tigo Sports +",
+          "categoria": "Intermedia",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "16:00",
+          "titulo": "Fútbol Formativas - Sub 20",
+          "canal": "Tigo Sports",
+          "categoria": "Formativas",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "18:00",
+          "titulo": "La Previa - Análisis Jornada",
+          "canal": "Tigo Sports",
+          "categoria": "Previa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "19:00",
+          "titulo": "Copa Libertadores - En Vivo: 【entity-River¦canonical_name=River Plate】 vs Boca",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+          "categoria": "Internacional",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "21:15",
+          "titulo": "El Tablón - Análisis Completo",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Programa",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "22:30",
+          "titulo": "Fútbol a lo Grande - Noche",
           "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
           "categoria": "Programa",
           "en_vivo": false
         },
         {
-          "hora_pyt": "20:00",
-          "titulo": "Copa Libertadores - Repetición",
-          "canal": "Tigo Sports",
-          "categoria": "Internacional",
+          "hora_pyt": "23:30",
+          "titulo": "Polideportivo - Resumen del Día",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+          "categoria": "Polideportivo",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "00:30",
+          "titulo": "Repetición: Copa Libertadores",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Repetición",
           "en_vivo": false
         }
       ]
@@ -168,17 +686,101 @@
   },
   "programacion": [
     {
+      "hora_pyt": "07:00",
+      "titulo": "Buenos Días Fútbol - Noticias",
+      "canal": "Tigo Sports",
+      "categoria": "Noticias",
+      "en_vivo": true
+    },
+    {
+      "hora_pyt": "08:30",
+      "titulo": "El Tablón - Repetición",
+      "canal": "Tigo Sports",
+      "categoria": "Programa",
+      "en_vivo": false
+    },
+    {
+      "hora_pyt": "10:00",
+      "titulo": "Fútbol a lo Grande - Debate",
+      "canal": "Tigo Sports",
+      "categoria": "Programa",
+      "en_vivo": true
+    },
+    {
+      "hora_pyt": "11:30",
+      "titulo": "Copa Paraguay - Mejores Goles",
+      "canal": "Tigo Sports +",
+      "categoria": "Copa",
+      "en_vivo": false
+    },
+    {
       "hora_pyt": "12:00",
       "titulo": "Fútbol a lo Grande",
+      "canal": "Tigo Sports",
+      "categoria": "Programa",
+      "en_vivo": false
+    },
+    {
+      "hora_pyt": "13:00",
+      "titulo": "Noticiero Deportivo",
+      "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+      "categoria": "Noticias",
+      "en_vivo": true
+    },
+    {
+      "hora_pyt": "14:00",
+      "titulo": "Intermedia: Sportivo Trinidense vs General Caballero",
+      "canal": "Tigo Sports +",
+      "categoria": "Intermedia",
+      "en_vivo": true
+    },
+    {
+      "hora_pyt": "16:00",
+      "titulo": "Fútbol Formativas - Sub 20",
+      "canal": "Tigo Sports",
+      "categoria": "Formativas",
+      "en_vivo": true
+    },
+    {
+      "hora_pyt": "18:00",
+      "titulo": "La Previa - Análisis Jornada",
+      "canal": "Tigo Sports",
+      "categoria": "Previa",
+      "en_vivo": true
+    },
+    {
+      "hora_pyt": "19:00",
+      "titulo": "Copa Libertadores - En Vivo: 【entity-River¦canonical_name=River Plate】 vs Boca",
+      "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+      "categoria": "Internacional",
+      "en_vivo": true
+    },
+    {
+      "hora_pyt": "21:15",
+      "titulo": "El Tablón - Análisis Completo",
+      "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+      "categoria": "Programa",
+      "en_vivo": true
+    },
+    {
+      "hora_pyt": "22:30",
+      "titulo": "Fútbol a lo Grande - Noche",
       "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
       "categoria": "Programa",
       "en_vivo": false
     },
     {
-      "hora_pyt": "20:00",
-      "titulo": "Copa Libertadores - Repetición",
-      "canal": "Tigo Sports",
-      "categoria": "Internacional",
+      "hora_pyt": "23:30",
+      "titulo": "Polideportivo - Resumen del Día",
+      "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+      "categoria": "Polideportivo",
+      "en_vivo": false
+    },
+    {
+      "hora_pyt": "00:30",
+      "titulo": "Repetición: Copa Libertadores",
+      "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+      "categoria": "Repetición",
       "en_vivo": false
     }
   ]

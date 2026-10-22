@@ -1,6 +1,6 @@
 {
-  "fecha_actualizacion": "2026-10-22T14:46:09.645954-03:00",
-  "fuente": "mi.tv / tigosports.com.py",
+  "fecha_actualizacion": "2026-10-22T17:46:49.670064Z",
+  "fuente": "mi.tv / fallback",
   "programacion": [
     {
       "hora": "15:00",
@@ -18,9 +18,16 @@
     },
     {
       "hora": "19:30",
-      "titulo": "El Tablón - Análisis",
+      "titulo": "El Tablón - Análisis fecha",
       "canal": "Tigo Sports",
       "categoria": "Programa",
+      "en_vivo": false
+    },
+    {
+      "hora": "21:00",
+      "titulo": "Copa Libertadores - Resumen",
+      "canal": "Tigo Sports +",
+      "categoria": "Internacional",
       "en_vivo": false
     }
   ]

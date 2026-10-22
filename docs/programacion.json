@@ -1,0 +1,185 @@
+{
+  "fecha_actualizacion": "2026-10-22T18:39:32.222358Z",
+  "rango": "2026-10-22 to 2026-10-28",
+  "fechas_disponibles": [
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24",
+    "2026-10-25",
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28"
+  ],
+  "programacion_por_fecha": {
+    "2026-10-22": {
+      "fecha": "2026-10-22",
+      "dia_semana": "Thursday",
+      "programacion": [
+        {
+          "hora_pyt": "12:00",
+          "titulo": "Fútbol a lo Grande",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "20:00",
+          "titulo": "Copa Libertadores - Repetición",
+          "canal": "Tigo Sports",
+          "categoria": "Internacional",
+          "en_vivo": false
+        }
+      ]
+    },
+    "2026-10-23": {
+      "fecha": "2026-10-23",
+      "dia_semana": "Friday",
+      "programacion": [
+        {
+          "hora_pyt": "12:00",
+          "titulo": "Fútbol a lo Grande",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "20:00",
+          "titulo": "Copa Libertadores - Repetición",
+          "canal": "Tigo Sports",
+          "categoria": "Internacional",
+          "en_vivo": false
+        }
+      ]
+    },
+    "2026-10-24": {
+      "fecha": "2026-10-24",
+      "dia_semana": "Saturday",
+      "programacion": [
+        {
+          "hora_pyt": "15:00",
+          "titulo": "Cerro Porteño vs 【entity-Olimpia¦canonical_name=Olimpia】 - Superclásico",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Primera División",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "17:30",
+          "titulo": "Libertad vs Guaraní",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+          "categoria": "Primera División",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "19:30",
+          "titulo": "El Tablón",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Programa",
+          "en_vivo": false
+        }
+      ]
+    },
+    "2026-10-25": {
+      "fecha": "2026-10-25",
+      "dia_semana": "Sunday",
+      "programacion": [
+        {
+          "hora_pyt": "15:00",
+          "titulo": "Cerro Porteño vs 【entity-Olimpia¦canonical_name=Olimpia】 - Superclásico",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Primera División",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "17:30",
+          "titulo": "Libertad vs Guaraní",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 +",
+          "categoria": "Primera División",
+          "en_vivo": true
+        },
+        {
+          "hora_pyt": "19:30",
+          "titulo": "El Tablón",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Programa",
+          "en_vivo": false
+        }
+      ]
+    },
+    "2026-10-26": {
+      "fecha": "2026-10-26",
+      "dia_semana": "Monday",
+      "programacion": [
+        {
+          "hora_pyt": "12:00",
+          "titulo": "Fútbol a lo Grande",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "20:00",
+          "titulo": "Copa Libertadores - Repetición",
+          "canal": "Tigo Sports",
+          "categoria": "Internacional",
+          "en_vivo": false
+        }
+      ]
+    },
+    "2026-10-27": {
+      "fecha": "2026-10-27",
+      "dia_semana": "Tuesday",
+      "programacion": [
+        {
+          "hora_pyt": "12:00",
+          "titulo": "Fútbol a lo Grande",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "20:00",
+          "titulo": "Copa Libertadores - Repetición",
+          "canal": "Tigo Sports",
+          "categoria": "Internacional",
+          "en_vivo": false
+        }
+      ]
+    },
+    "2026-10-28": {
+      "fecha": "2026-10-28",
+      "dia_semana": "Wednesday",
+      "programacion": [
+        {
+          "hora_pyt": "12:00",
+          "titulo": "Fútbol a lo Grande",
+          "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+          "categoria": "Programa",
+          "en_vivo": false
+        },
+        {
+          "hora_pyt": "20:00",
+          "titulo": "Copa Libertadores - Repetición",
+          "canal": "Tigo Sports",
+          "categoria": "Internacional",
+          "en_vivo": false
+        }
+      ]
+    }
+  },
+  "programacion": [
+    {
+      "hora_pyt": "12:00",
+      "titulo": "Fútbol a lo Grande",
+      "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+      "categoria": "Programa",
+      "en_vivo": false
+    },
+    {
+      "hora_pyt": "20:00",
+      "titulo": "Copa Libertadores - Repetición",
+      "canal": "Tigo Sports",
+      "categoria": "Internacional",
+      "en_vivo": false
+    }
+  ]
+}

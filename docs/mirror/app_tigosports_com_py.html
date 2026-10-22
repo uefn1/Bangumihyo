@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head><base href="https://app.tigosports.com.py/"/>
 <meta charset="utf-8"/>
 <title>¿Cómo descargo la aplicación de Tigo Sports?</title>
 <meta content="¿Cómo descargo la aplicación de Tigo Sports?" name="title"/>
@@ -8,8 +8,8 @@
 <meta content="initial-scale=1" name="viewport"/>
 <meta content="no-cache" name="turbolinks-cache-control"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<script src="https://app.tigosports.com.py/packs/js/portal-947d828d776848f30fa3.js"></script>
-<link href="https://app.tigosports.com.py/packs/css/portal-f4e5bde3.css" rel="stylesheet"/>
+<script src="/packs/js/portal-947d828d776848f30fa3.js"></script>
+<link href="/packs/css/portal-f4e5bde3.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
 <!-- code init head html use cnd or metadata -->
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -53,7 +53,7 @@ img.img-responsive {
 }
         </style>
 <meta content="authenticity_token" name="csrf-param"/>
-<meta content="v0bdfu3IRz9uA5MWrfvi48NxIlKfl1Oa2x4SzFSby8z2bx8drZOFcJyIb3OKy9crneaR0i2e5kDascxM0Ot_FA" name="csrf-token"/>
+<meta content="q2jnZduPyc0eSdBC5rUPh6l_VerXrEh1_8EmIIJBycRyu0JoJ4xqH78ZnqNATyJClaSTwqtJnq1D9ak2ijRVQg" name="csrf-token"/>
 <title>Centro de ayuda - Tigo Paraguay</title>
 <script type="text/javascript">
       // Chatwoot Tracking SDK
@@ -1530,17 +1530,55 @@ $(document).ready(function () {
       }
     </script>
 </head>
-<body><div style="background:#00a9e0;color:#00111a;padding:10px 16px;font-family:monospace;font-size:12px;position:sticky;top:0;z-index:9999;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
-<strong>Mirror: 【entity-Tigo Sports¦canonical_name=Tigo Sports】 Oficial</strong>
-<span id="tz-info">PYT UTC-3</span>
-<select id="tz-select" style="padding:4px 8px;border-radius:999px">
-<option selected="" value="America/Asuncion">PYT Asuncion</option>
-<option value="UTC">GMT/UTC</option>
+<body>
+<div id="tigo-mirror-banner" style="background:#00a9e0;color:#00111a;padding:10px 16px;font-family:system-ui,sans-serif;font-size:12px;position:sticky;top:0;z-index:99999;display:flex;gap:12px;align-items:center;flex-wrap:wrap;border-bottom:2px solid #000">
+<strong>MIRROR: https://app.tigosports.com.py/</strong>
+<span>Actualizado: 2026-10-22 19:21 UTC</span>
+<select id="tz-select" style="padding:4px 10px;border-radius:999px;border:1px solid #000">
+<option selected="" value="America/Asuncion">PYT UTC-3</option>
+<option value="UTC">GMT</option>
 <option value="Asia/Tokyo">JST Tokyo (+1d)</option>
 </select>
-<span style="font-size:10px">Actualizado: 2026-10-22 19:14 UTC</span>
-<a href="../index.html" style="margin-left:auto;background:#000;color:#fff;padding:4px 10px;border-radius:999px;text-decoration:none">Ver Guía EPG</a>
+<span id="tz-info" style="font-size:10px"></span>
+<a href="../" style="margin-left:auto;background:#000;color:#fff;padding:5px 12px;border-radius:999px;text-decoration:none">← Volver</a>
+<a href="../index_epg.html" style="background:#fff;color:#000;padding:5px 12px;border-radius:999px;text-decoration:none">Guía EPG TV</a>
 </div>
+<script>
+            (function(){
+              function getOff(tz,d){
+                try{
+                  const f=new Intl.DateTimeFormat('en-US',{timeZone:tz,timeZoneName:'shortOffset',hour:'2-digit'});
+                  const n=f.formatToParts(d).find(p=>p.type==='timeZoneName')?.value||'GMT+0';
+                  const m=n.match(/GMT([+-])(\d+)(?::(\d+))?/);
+                  return m?(m[1]==='+'?1:-1)*(parseInt(m[2])*60+parseInt(m[3]||'0')):0;
+                }catch{return 0}
+              }
+              const sel=document.getElementById('tz-select');
+              sel&&sel.addEventListener('change',e=>{
+                const target=e.target.value;
+                const now=new Date();
+                const diff=getOff(target,now)-getOff('America/Asuncion',now);
+                document.getElementById('tz-info').textContent=`差分 ${diff/60}時間`;
+                // 時刻っぽい要素に変換バッジを追加
+                document.querySelectorAll('time, [class*="hora"], [class*="time"]').forEach(el=>{
+                  if(el.dataset.tzDone) return;
+                  const m=el.textContent.match(/(\d{1,2}:\d{2})/);
+                  if(!m) return;
+                  let total=parseInt(m[1].split(':')[0])*60+parseInt(m[1].split(':')[1])+diff;
+                  let shift=0;
+                  while(total<0){total+=1440;shift--;}
+                  while(total>=1440){total-=1440;shift++;}
+                  const h=String(Math.floor(total/60)).padStart(2,'0'), mm=String(total%60).padStart(2,'0');
+                  const badge=document.createElement('span');
+                  badge.style.cssText='font-size:10px;color:#00a9e0;background:#00111a;padding:1px 5px;border-radius:999px;margin-left:6px';
+                  badge.textContent=`→ ${h}:${mm} ${target} ${shift?`(${shift>0?'+':''}${shift}d)`:''}`;
+                  el.appendChild(badge);
+                  el.dataset.tzDone='1';
+                });
+              });
+            })();
+            </script>
+
 <!-- Google Tag Manager (noscript) -->
 <!-- End Google Tag Manager (noscript) -->
 <div class="antialiased" id="portal">
@@ -1550,7 +1588,7 @@ $(document).ready(function () {
 <div class="flex items-center justify-between py-4">
 <!-- Left: Logo -->
 <div class="flex items-center">
-<a class="flex items-center" href="https://app.tigosports.com.py/hc/centro-de-ayuda/es">
+<a class="flex items-center" href="/hc/centro-de-ayuda/es">
 <img alt="Centro de ayuda" class="h-16 w-auto mr-3" src="https://ayuda.tigo.com.py/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--548cc75a67cc2fae8f799f71f34f51e757b86e81/logoTigo.png" style="max-height: 64px; object-fit: contain;"/>
 </a>
 </div>
@@ -1723,14 +1761,14 @@ $(document).ready(function () {
 <path d="M19 12H5M12 19l-7-7 7-7"></path>
 </svg>
 </a>
-<a class="text-slate-500 dark:text-slate-200 text-sm gap-1 hover:cursor-pointer false leading-8 font-semibold" href="https://app.tigosports.com.py/hc/centro-de-ayuda/es">
+<a class="text-slate-500 dark:text-slate-200 text-sm gap-1 hover:cursor-pointer false leading-8 font-semibold" href="/hc/centro-de-ayuda/es">
     Inicio
   </a>
 <span class="w-4 h-4 [&amp;&gt;svg]:w-3 [&amp;&gt;svg]:h-3 flex items-center justify-center text-xs text-slate-500 dark:text-slate-300"><svg class="w-4 h-4 fill-current text-slate-500 dark:text-slate-400" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.47 4.22a.75.75 0 0 0 0 1.06L15.19 12l-6.72 6.72a.75.75 0 1 0 1.06 1.06l7.25-7.25a.75.75 0 0 0 0-1.06L9.53 4.22a.75.75 0 0 0-1.06 0Z"></path>
 </svg>
 </span>
-<a class="text-slate-500 dark:text-slate-200 text-sm gap-1 whitespace-nowrap hover:cursor-pointer false leading-8 font-semibold" href="https://app.tigosports.com.py/hc/centro-de-ayuda/es/categories/artculos-mvil">
+<a class="text-slate-500 dark:text-slate-200 text-sm gap-1 whitespace-nowrap hover:cursor-pointer false leading-8 font-semibold" href="/hc/centro-de-ayuda/es/categories/artculos-mvil">
     Artículos Móvil
     </a>
 <span class="w-4 h-4 [&amp;&gt;svg]:w-3 [&amp;&gt;svg]:h-3 flex items-center justify-center text-xs text-slate-500 dark:text-slate-300"><svg class="w-4 h-4 fill-current text-slate-500 dark:text-slate-400" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -1759,52 +1797,52 @@ $(document).ready(function () {
 <nav class="sidebar-articles-list">
 <ul>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/103959179190119711-como-selecciono-la-red-claro-argentina-para-utilizar-roaming">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/103959179190119711-como-selecciono-la-red-claro-argentina-para-utilizar-roaming">
                 ¿Cómo selecciono la red Claro Argentina para utilizar Roaming?
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/101256179085904911-red-4_g-_-cambio-de-telefono-chip">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/101256179085904911-red-4_g-_-cambio-de-telefono-chip">
                 Red 4G - Cambio de Teléfono 📱+ Chip 
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/101056179079256611-red-4_g-_-cambio-de-telefono">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/101056179079256611-red-4_g-_-cambio-de-telefono">
                 Red 4G - Cambio de Teléfono📱
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/97025178906470811-como-configurar-mi-celular-para-navegar-en-4_g">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/97025178906470811-como-configurar-mi-celular-para-navegar-en-4_g">
                 ¿Cómo configurar mi celular para navegar en 4G?
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/91593178723734811-red-3g-cambio-de-configuracion">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/91593178723734811-red-3g-cambio-de-configuracion">
                 Red 3G - Cambio de Configuración ⚙️
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/91560178723680811-red-3g-cambio-de-telefono-chip">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/91560178723680811-red-3g-cambio-de-telefono-chip">
                 Red 3G - Cambio de Teléfono 📱+ Chip 
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/91527178723483911-red-3g-cambio-de-telefono">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/91527178723483911-red-3g-cambio-de-telefono">
                 Red 3G - Cambio de Teléfono 📱
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/73063178051425511-como-activar-volte-en-tu-dispositivo">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/73063178051425511-como-activar-volte-en-tu-dispositivo">
                 Cómo activar VoLTE en tu dispositivo 📶
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/72140178032156911-como-comprar-paquetes-o-saldo-desde-mango">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/72140178032156911-como-comprar-paquetes-o-saldo-desde-mango">
                 ¿Cómo comprar paquetes o saldo desde Mango?
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/70819177990477611-como-comprar-paquetes-o-saldo-desde-mi-app-ueno">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/70819177990477611-como-comprar-paquetes-o-saldo-desde-mi-app-ueno">
                 ¿Cómo comprar paquetes o saldo desde mi App Ueno?
               </a>
 </li>
@@ -1812,7 +1850,7 @@ $(document).ready(function () {
 </nav>
 <!-- Ver Más Button -->
 <div class="sidebar-view-more">
-<a class="sidebar-view-more-btn" href="https://app.tigosports.com.py/hc/centro-de-ayuda/es/categories/artculos-mvil">
+<a class="sidebar-view-more-btn" href="/hc/centro-de-ayuda/es/categories/artculos-mvil">
           VER MÁS
           <svg fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
 <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" fill-rule="evenodd"></path>
@@ -1835,52 +1873,52 @@ $(document).ready(function () {
 <nav class="sidebar-articles-list">
 <ul>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/103959179190119711-como-selecciono-la-red-claro-argentina-para-utilizar-roaming">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/103959179190119711-como-selecciono-la-red-claro-argentina-para-utilizar-roaming">
                 ¿Cómo selecciono la red Claro Argentina para utilizar Roaming?
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/101256179085904911-red-4_g-_-cambio-de-telefono-chip">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/101256179085904911-red-4_g-_-cambio-de-telefono-chip">
                 Red 4G - Cambio de Teléfono 📱+ Chip 
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/101056179079256611-red-4_g-_-cambio-de-telefono">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/101056179079256611-red-4_g-_-cambio-de-telefono">
                 Red 4G - Cambio de Teléfono📱
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/97025178906470811-como-configurar-mi-celular-para-navegar-en-4_g">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/97025178906470811-como-configurar-mi-celular-para-navegar-en-4_g">
                 ¿Cómo configurar mi celular para navegar en 4G?
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/91593178723734811-red-3g-cambio-de-configuracion">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/91593178723734811-red-3g-cambio-de-configuracion">
                 Red 3G - Cambio de Configuración ⚙️
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/91560178723680811-red-3g-cambio-de-telefono-chip">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/91560178723680811-red-3g-cambio-de-telefono-chip">
                 Red 3G - Cambio de Teléfono 📱+ Chip 
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/91527178723483911-red-3g-cambio-de-telefono">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/91527178723483911-red-3g-cambio-de-telefono">
                 Red 3G - Cambio de Teléfono 📱
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/73063178051425511-como-activar-volte-en-tu-dispositivo">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/73063178051425511-como-activar-volte-en-tu-dispositivo">
                 Cómo activar VoLTE en tu dispositivo 📶
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/72140178032156911-como-comprar-paquetes-o-saldo-desde-mango">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/72140178032156911-como-comprar-paquetes-o-saldo-desde-mango">
                 ¿Cómo comprar paquetes o saldo desde Mango?
               </a>
 </li>
 <li class="sidebar-article-item">
-<a class="sidebar-article-link" href="https://app.tigosports.com.py/hc/centro-de-ayuda/articles/70819177990477611-como-comprar-paquetes-o-saldo-desde-mi-app-ueno">
+<a class="sidebar-article-link" href="/hc/centro-de-ayuda/articles/70819177990477611-como-comprar-paquetes-o-saldo-desde-mi-app-ueno">
                 ¿Cómo comprar paquetes o saldo desde mi App Ueno?
               </a>
 </li>
@@ -1888,7 +1926,7 @@ $(document).ready(function () {
 </nav>
 <!-- Ver Más Button -->
 <div class="sidebar-view-more">
-<a class="sidebar-view-more-btn" href="https://app.tigosports.com.py/hc/centro-de-ayuda/es/categories/artculos-mvil">
+<a class="sidebar-view-more-btn" href="/hc/centro-de-ayuda/es/categories/artculos-mvil">
           VER MÁS
           <svg fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
 <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" fill-rule="evenodd"></path>
@@ -2830,7 +2868,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
 <div class="mx-auto max-w-2xl text-center py-1">
 <div class="flex items-center justify-center gap-2">
-<img alt="Chatwoot" class="w-4 h-4" src="https://app.tigosports.com.py/brand-assets/logo_thumbnail.svg"/>
+<img alt="Chatwoot" class="w-4 h-4" src="/brand-assets/logo_thumbnail.svg"/>
 <p class="text-slate-700 dark:text-slate-300 text-sm font-medium text-center">
         Hecho con
         <a class="hover:underline" href="https://www.chatwoot.com" rel="noopener noreferrer nofollow" target="_blank">Chatwoot</a>
@@ -2839,29 +2877,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </footer>
 </div>
-<script>
-                function getOff(tz,d){try{const f=new Intl.DateTimeFormat('en-US',{timeZone:tz,timeZoneName:'shortOffset',hour:'2-digit'});const n=f.formatToParts(d).find(p=>p.type==='timeZoneName')?.value||'GMT+0';const m=n.match(/GMT([+-])(\d+)(?::(\d+))?/);return m?(m[1]==='+'?1:-1)*(parseInt(m[2])*60+parseInt(m[3]||'0')):0}catch{return 0}}
-                document.getElementById('tz-select')?.addEventListener('change',e=>{
-                  const target=e.target.value;
-                  document.querySelectorAll('*').forEach(el=>{
-                    const txt=el.childNodes[0]?.nodeValue;
-                    if(!txt) return;
-                    const m=txt.match(/(\d{1,2}:\d{2})/);
-                    if(!m) return;
-                    // 簡易変換表示
-                    const span=document.createElement('span');
-                    span.style.cssText='font-size:10px;color:#00a9e0;margin-left:6px';
-                    const now=new Date();
-                    const diff=getOff(target,now)-getOff('America/Asuncion',now);
-                    let total=parseInt(m[1].split(':')[0])*60+parseInt(m[1].split(':')[1])+diff;
-                    let shift=0;
-                    while(total<0){total+=1440;shift--;} while(total>=1440){total-=1440;shift++;}
-                    const h=String(Math.floor(total/60)).padStart(2,'0'), mm=String(total%60).padStart(2,'0');
-                    span.textContent=`→ ${h}:${mm} ${target} ${shift!==0?(shift>0?`(+${shift}d)`:`(${shift}d)`):''}`;
-                    if(!el.querySelector('.tz-converted')){span.className='tz-converted';el.appendChild(span);}
-                  });
-                });
-                </script></body>
+</body>
 <style type="text/css">
     html {
       font-family: 'Roboto', sans-serif !important;

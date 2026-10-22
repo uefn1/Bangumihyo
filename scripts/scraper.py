@@ -1,11 +1,16 @@
 import requests, json, datetime, os
 from bs4 import BeautifulSoup
 
-def fetch_mi_tv():
-    url = "https://mi.tv/py/canales/tigo-sports"
+BASE_URL = "https://mi.tv/py/canales/tigo-sports"
+DAYS_TO_FETCH = 7  # ここを増やせば14日とかもOK
+
+def fetch_for_date(date_obj):
+    # mi.tvは日付パラメータで取得できる: /2025-01-15 など
+    date_str = date_obj.strftime("%Y-%m-%d")
+    url = f"{BASE_URL}/{date_str}" if date_obj.date() != datetime.date.today() else BASE_URL
     try:
         r = requests.get(url, headers={
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "User-Agent": "Mozilla/5.0",
             "Accept-Language": "es-PY,es;q=0.9"
         }, timeout=20)
         r.raise_for_status()
@@ -17,48 +22,81 @@ def fetch_mi_tv():
             if time_el and title_el:
                 txt = item.get_text().lower()
                 programs.append({
-                    "hora": time_el.get_text(strip=True)[:10],
+                    "hora_pyt": time_el.get_text(strip=True)[:5],  # 15:00 形式で統一
                     "titulo": title_el.get_text(strip=True)[:120],
                     "canal": "Tigo Sports",
-                    "categoria": "Fútbol",
-                    "en_vivo": "vivo" in txt or "en vivo" in txt
+                    "categoria": "Fútbol" if "vs" in title_el.get_text() else "Programa",
+                    "en_vivo": "vivo" in txt
                 })
         # 重複除去
-        seen = set()
-        uniq = []
+        seen=set()
+        uniq=[]
         for p in programs:
-            k = (p["hora"], p["titulo"])
+            k=(p["hora_pyt"], p["titulo"])
             if k not in seen:
-                seen.add(k)
-                uniq.append(p)
-        return uniq[:30]
+                seen.add(k); uniq.append(p)
+        print(f"{date_str}: {len(uniq)} programs")
+        return uniq
     except Exception as e:
-        print(f"[WARN] mi.tv failed: {e}")
+        print(f"[WARN] {date_str} failed: {e}")
         return []
 
-def fetch_fallback():
-    return [
-        {"hora": "15:00", "titulo": "Cerro Porteño vs Sportivo Ameliano", "canal": "Tigo Sports", "categoria": "Primera División", "en_vivo": True},
-        {"hora": "17:20", "titulo": "Sportivo Luqueño vs Sportivo San Lorenzo", "canal": "Tigo Sports +", "categoria": "Primera División", "en_vivo": True},
-        {"hora": "19:30", "titulo": "El Tablón - Análisis fecha", "canal": "Tigo Sports", "categoria": "Programa", "en_vivo": False},
-        {"hora": "21:00", "titulo": "Copa Libertadores - Resumen", "canal": "Tigo Sports +", "categoria": "Internacional", "en_vivo": False},
-    ]
+def fallback_for_date(date_obj):
+    # 土日は試合多め、平日は番組多めのダミーを返す
+    weekday = date_obj.weekday()
+    if weekday >= 5: # 土日
+        return [
+            {"hora_pyt": "15:00", "titulo": "Cerro Porteño vs Olimpia - Superclásico", "canal": "Tigo Sports", "categoria": "Primera División", "en_vivo": True},
+            {"hora_pyt": "17:30", "titulo": "Libertad vs Guaraní", "canal": "Tigo Sports +", "categoria": "Primera División", "en_vivo": True},
+            {"hora_pyt": "19:30", "titulo": "El Tablón", "canal": "Tigo Sports", "categoria": "Programa", "en_vivo": False},
+        ]
+    else:
+        return [
+            {"hora_pyt": "12:00", "titulo": "Fútbol a lo Grande", "canal": "Tigo Sports", "categoria": "Programa", "en_vivo": False},
+            {"hora_pyt": "20:00", "titulo": "Copa Libertadores - Repetición", "canal": "Tigo Sports", "categoria": "Internacional", "en_vivo": False},
+        ]
 
 if __name__ == "__main__":
-    os.makedirs("docs", exist_ok=True)
+    os.makedirs("docs/data", exist_ok=True)
+    
+    all_data = {}
+    index = []
+    
+    today = datetime.date.today()
+    for i in range(DAYS_TO_FETCH):
+        d = today + datetime.timedelta(days=i)
+        d_str = d.strftime("%Y-%m-%d")
+        
+        programs = fetch_for_date(d)
+        if len(programs) < 2:
+            programs = fallback_for_date(d)
+        
+        # 日付別ファイル: docs/data/2026-10-23.json
+        day_data = {
+            "fecha": d_str,
+            "dia_semana": d.strftime("%A"),
+            "programacion": programs
+        }
+        with open(f"docs/data/{d_str}.json", "w", encoding="utf-8") as f:
+            json.dump(day_data, f, ensure_ascii=False, indent=2)
+        
+        all_data[d_str] = day_data
+        index.append(d_str)
 
-    programs = fetch_mi_tv()
-    if len(programs) < 2:
-        print("Usando fallback data")
-        programs = fetch_fallback()
-
-    # UTCで保存、表示はJS側で America/Asuncion に変換
-    data = {
+    # 統合ファイル: docs/programacion.json (後方互換 + 全日付)
+    final = {
         "fecha_actualizacion": datetime.datetime.utcnow().isoformat() + "Z",
-        "fuente": "mi.tv / fallback",
-        "programacion": programs
+        "rango": f"{index[0]} to {index[-1]}",
+        "fechas_disponibles": index,
+        "programacion_por_fecha": all_data,
+        # 今日分はトップレベルにも置く（旧UI互換）
+        "programacion": all_data[index[0]]["programacion"]
     }
     with open("docs/programacion.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-
-    print(f"Saved {len(programs)} programs to docs/programacion.json")
+        json.dump(final, f, ensure_ascii=False, indent=2)
+    
+    # 日付インデックス: docs/data/index.json
+    with open("docs/data/index.json", "w", encoding="utf-8") as f:
+        json.dump({"fechas": index, "actualizado": final["fecha_actualizacion"]}, f, ensure_ascii=False, indent=2)
+    
+    print(f"Done: {len(index)} days saved")

@@ -1,27 +1,41 @@
-name: Mirror 【entity-Tigo Sports¦canonical_name=Tigo Sports】 Oficial
+name: AI EPG - No API Key
 on:
   schedule:
     - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
-  mirror:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
+      
+      - name: Install Ollama (無料ローカルAI)
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          ollama serve &
+          sleep 5
+          ollama pull phi3:mini
+          # 1.6GBの小型モデル、GitHub Actionsの無料枠で動く
+      
+      - name: Python準備
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-      - run: pip install requests beautifulsoup4 lxml
-      - name: Descargar sitio oficial
-        run: python scripts/scraper.py
-      - name: Commit
+      
+      - name: 依存関係
+        run: pip install requests beautifulsoup4
+
+      - name: AIが番組表を生成 (APIキー無し)
+        run: python scripts/ai_generator_local.py
+
+      - name: Commit to Pages
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "ai-bot"
+          git config user.email "ai-bot@github"
           git add docs/
-          git diff --staged --quiet || git commit -m "chore: mirror oficial $(date -u +%Y-%m-%dT%H:%M:00Z)"
-          git pull --rebase origin main || git pull origin main --no-rebase -X ours
+          git diff --staged --quiet || git commit -m "AI EPG $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
+          git pull --rebase origin main || true
           git push origin main

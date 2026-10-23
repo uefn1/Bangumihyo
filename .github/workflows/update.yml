@@ -1,7 +1,6 @@
-name: AI EPG - No API Key
+name: AI EPG - Tiny Model
 on:
-  schedule:
-    - cron: '0 * * * *'
+  schedule: [{cron: '0 * * * *'}]
   workflow_dispatch:
 
 jobs:
@@ -11,31 +10,33 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v5
-      
-      - name: Install Ollama (無料ローカルAI)
+
+      - name: Install Ollama
         run: |
           curl -fsSL https://ollama.com/install.sh | sh
-          ollama serve &
-          sleep 5
-          ollama pull phi3:mini
-          # 1.6GBの小型モデル、GitHub Actionsの無料枠で動く
-      
-      - name: Python準備
-        uses: actions/setup-python@v6
+          nohup ollama serve > /tmp/ollama.log 2>&1 &
+          sleep 3
+
+      - name: Pull tiny model (450MB - 最軽量)
+        run: |
+          ollama pull tinyllama
+          # 代替: ollama pull qwen2:0.5b  (さらに軽い 350MB)
+          # 代替: ollama pull llama3.2:1b  (1.3GBだが高性能)
+
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-      
-      - name: 依存関係
-        run: pip install requests beautifulsoup4
 
-      - name: AIが番組表を生成 (APIキー無し)
+      - run: pip install requests
+
+      - name: Generate EPG with tiny model
         run: python scripts/ai_generator_local.py
 
-      - name: Commit to Pages
+      - name: Commit
         run: |
           git config user.name "ai-bot"
           git config user.email "ai-bot@github"
           git add docs/
-          git diff --staged --quiet || git commit -m "AI EPG $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
+          git diff --staged --quiet || git commit -m "AI EPG tinyllama $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git pull --rebase origin main || true
           git push origin main

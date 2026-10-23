@@ -1,0 +1,30 @@
+{
+  "fecha": "2026-10-21",
+  "dia_semana": "Wednesday",
+  "programacion": [
+    {
+      "hora_pyt": "06:00",
+      "titulo": "El Tablon",
+      "categoria": "Fútbol",
+      "canal": " Tigo Sports",
+      "en_vivo": false,
+      "fuente": "tinyllama"
+    },
+    {
+      "hora_pyt": "15:00",
+      "titulo": "Guarani vs Club Libertad",
+      "categoria": "Fútbol",
+      "canal": " Tigo Sports",
+      "en_vivo": true,
+      "fuente": "tinyllama"
+    },
+    {
+      "hora_pyt": "19:30",
+      "titulo": "Olimpia vs Cerro",
+      "categoria": "Fútbol",
+      "canal": " Tigo Sports",
+      "en_vivo": true,
+      "fuente": "tinyllama"
+    }
+  ]
+}

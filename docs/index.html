@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> 【entity-Tigo Sports¦canonical_name=Tigo Sports】 Paraguay - Guía TV (7 días)</title>
+<style>
+:root{--bg:#0a0e1a;--card:#141d2f;--card2:#1a2332;--border:#23344f;--accent:#00a9e0;--text:#e6eefc;--muted:#8aa0c2;--live:#ff2d55;--ok:#00c896;--past:#3a4a6a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Inter,sans-serif}
+.h{position:sticky;top:0;z-index:20;background:rgba(10,14,26,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:10px 14px}
+.h1{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:center}
+.logo{font-weight:900;letter-spacing:.5px}.logo span{color:var(--accent)}
+.meta{font-size:11px;color:var(--muted);margin-top:4px}
+.controls{display:flex;gap:6px;align-items:center}
+.ctrl{padding:6px 12px;border-radius:999px;border:1px solid var(--border);background:var(--card2);color:var(--text);font-size:12px}
+.tabs{display:flex;gap:6px;overflow:auto;padding:10px 14px;border-bottom:1px solid var(--border);scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:7px 14px;border-radius:999px;border:1px solid var(--border);background:var(--card2);color:var(--muted);cursor:pointer;font-size:12px;white-space:nowrap;transition:.2s}
+.tab.active{background:var(--text);color:#000;font-weight:800}
+.tab.past{opacity:.7}
+.tab.today{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.tab b{font-size:10px;padding:1px 5px;border-radius:999px;margin-left:4px}
+.b-hoy{background:var(--accent);color:#00111a}
+.b-ayer{background:var(--past);color:var(--text)}
+.epg{display:grid;grid-template-columns:68px 1fr 1fr;min-height:70vh}
+.time{border-right:1px solid var(--border);background:var(--bg);position:relative}
+.slot{height:60px;border-bottom:1px dashed rgba(35,52,79,.45);font-size:11px;color:var(--muted);text-align:right;padding:4px 6px;font-family:monospace}
+.ch{border-right:1px solid var(--border);position:relative;min-height:1080px}
+.chh{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--border);padding:8px 10px;font-weight:800;font-size:12px;display:flex;justify-content:space-between}
+.p{position:absolute;left:5px;right:5px;border:1px solid var(--border);background:linear-gradient(180deg,var(--card2),var(--card));border-radius:10px;padding:7px 9px;overflow:hidden;transition:.15s;cursor:pointer}
+.p:hover{border-color:var(--accent);transform:translateY(-1px)}
+.p.live{border-left:3px solid var(--live);background:linear-gradient(180deg,#1f2332,#141d2f)}
+.p.past{opacity:.6;background:var(--bg)}
+.hora{font-family:monospace;font-size:11px;font-weight:800;display:flex;gap:6px;align-items:center}
+.tit{font-size:12px;font-weight:600;line-height:1.25;margin:3px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.badge{font-size:9px;padding:1px 6px;border-radius:999px;background:var(--bg);border:1px solid var(--border);color:var(--muted)}
+.badge.live{background:var(--live);color:#fff;border-color:var(--live);animation:pulse 1.5s infinite}
+.badge.cat{background:var(--card2)}
+.conv{font-size:10px;color:var(--muted);font-family:monospace;margin-top:4px}
+.shift{font-size:9px;font-weight:800;padding:1px 5px;border-radius:999px;color:#fff;margin-left:4px}.pos{background:var(--ok)}.neg{background:var(--live)}
+.now{position:absolute;left:0;right:0;height:2px;background:var(--live);z-index:10;pointer-events:none}.now::before{content:'';position:absolute;left:-4px;top:-4px;width:10px;height:10px;background:var(--live);border-radius:50%}
+.footer{padding:16px;text-align:center;font-size:11px;color:var(--muted);border-top:1px solid var(--border);margin-top:20px}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+@media(max-width:760px){.epg{grid-template-columns:62px 1fr}.ch:last-child{display:none}}
+</style>
+</head>
+<body>
+<div class="h">
+  <div class="h1">
+    <div>
+      <div class="logo"><span>●</span> 【entity-TIGO SPORTS¦canonical_name=Tigo Sports】 <span style="font-weight:400;font-size:12px;opacity:.8">Paraguay</span></div>
+      <div class="meta" id="meta">Cargando programación 7 días (desde hace 2 días)...</div>
+    </div>
+    <div class="controls">
+      <input id="q" class="ctrl" placeholder="Buscar: 【entity-Olimpia¦canonical_name=Olimpia】, Cerro...">
+      <select id="tz" class="ctrl">
+        <option value="America/Asuncion">PYT (Asunción)</option>
+        <option value="UTC">GMT</option>
+        <option value="Asia/Tokyo" selected>JST (Tokyo)</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div id="tabs" class="tabs"></div>
+
+<div class="epg">
+  <div class="time" id="time"></div>
+  <div class="ch" id="c1"><div class="chh"><span> 【entity-Tigo Sports¦canonical_name=Tigo Sports】</span><span id="cnt1" style="font-weight:400;font-size:10px;color:var(--muted)"></span></div></div>
+  <div class="ch" id="c2"><div class="chh"><span> 【entity-Tigo Sports¦canonical_name=Tigo Sports】 +</span><span id="cnt2" style="font-weight:400;font-size:10px;color:var(--muted)"></span></div></div>
+</div>
+
+<div class="footer">
+  Generado por IA local <span id="gen"></span> • Fuente: tinyllama-fallback + APF • Conversión automática (+1d) para JST<br>
+  <a href="./programacion.json" style="color:var(--muted)">programacion.json</a> • <a href="./data/" style="color:var(--muted)">/data/ (7 días)</a>
+</div>
+
+<script>
+const SRC_TZ='America/Asuncion';
+
+function clean(s){return s?String(s).replace(/ 【entity-Tigo Sports¦canonical_name=Tigo Sports】/gi,'').trim():''}
+
+function tzOffset(tz, d){
+  try{
+    const fmt=new Intl.DateTimeFormat('en-US',{timeZone:tz,timeZoneName:'shortOffset',hour:'2-digit'});
+    const parts=fmt.formatToParts(d);
+    const name=parts.find(p=>p.type==='timeZoneName')?.value||'GMT+0';
+    const m=name.match(/GMT([+-])(\d+)(?::(\d+))?/);
+    return m? (m[1]==='+'?1:-1)*(parseInt(m[2])*60+parseInt(m[3]||'0')):0;
+  }catch{return 0}
+}
+
+function convertTime(hora_pyt, fecha_pyt, tgt){
+  // hora_pyt "19:30", fecha_pyt "2026-10-23", tgt "Asia/Tokyo"
+  const [y,m,d]=fecha_pyt.split('-').map(Number);
+  const [hh,mm]=hora_pyt.split(':').map(Number);
+  const baseUTC=Date.UTC(y,m-1,d,hh,mm);
+  const diff=tzOffset(tgt,new Date(baseUTC))-tzOffset(SRC_TZ,new Date(baseUTC));
+  let totalMin=hh*60+mm+diff;
+  let cur=new Date(y,m-1,d);
+  let shift=0;
+  while(totalMin<0){totalMin+=1440;cur.setDate(cur.getDate()-1);shift--}
+  while(totalMin>=1440){totalMin-=1440;cur.setDate(cur.getDate()+1);shift++}
+  const ds=`${cur.getFullYear()}-${String(cur.getMonth()+1).padStart(2,'0')}-${String(cur.getDate()).padStart(2,'0')}`;
+  const ts=`${String(Math.floor(totalMin/60)).padStart(2,'0')}:${String(totalMin%60).padStart(2,'0')}`;
+  return{ds,ts,shift,label:shift?`(${shift>0?'+':''}${shift}d)`:''}
+}
+
+let DATA=null, CUR=null;
+
+function buildTimeSlots(){
+  const el=document.getElementById('time');
+  let html='';
+  for(let i=0;i<24*60;i+=60){
+    const h=Math.floor(i/60);
+    const label=`${String((h+6)%24).padStart(2,'0')}:00`;
+    html+=`<div class="slot">${label}</div>`;
+  }
+  el.innerHTML=html;
+}
+
+async function load(){
+  buildTimeSlots();
+  const r=await fetch('./programacion.json?v='+Date.now());
+  DATA=await r.json();
+  
+  const todayStr=new Date().toISOString().slice(0,10);
+  // URL param or today or 2 days ago default
+  const urlDate=new URLSearchParams(location.search).get('date');
+  if(urlDate && DATA.fechas_disponibles.includes(urlDate)){
+    CUR=urlDate;
+  } else {
+    // 7日間のうち今日に一番近いものを選ぶ
+    CUR=DATA.fechas_disponibles.find(d=>d>=todayStr) || DATA.fechas_disponibles[2] || DATA.fechas_disponibles[0];
+  }
+
+  document.getElementById('gen').textContent=`• ${DATA.generator||''} • ${DATA.fecha_actualizacion||''}`;
+  document.getElementById('meta').textContent=`${DATA.rango||''} • ${DATA.fechas_disponibles.length} días • PYT→JST (+1d) automático`;
+
+  const tabsEl=document.getElementById('tabs');
+  tabsEl.innerHTML=DATA.fechas_disponibles.map(f=>{
+    const d=new Date(f+'T12:00:00');
+    const label=d.toLocaleDateString('es-PY',{weekday:'short',day:'2-digit',month:'short'});
+    const isToday=f===todayStr;
+    const isPast=f<todayStr;
+    let badge='';
+    if(isToday) badge='<b class="b-hoy">HOY</b>';
+    else if(f===DATA.fechas_disponibles[0]) badge='<b class="b-ayer">HACE 2D</b>';
+    const cls=`tab ${f===CUR?'active':''} ${isPast?'past':''} ${isToday?'today':''}`;
+    return `<button class="${cls}" onclick="switchDate('${f}')">${label} ${badge}</button>`;
+  }).join('');
+
+  render();
+}
+
+function switchDate(f){
+  CUR=f;
+  history.replaceState(null,'','?date='+f);
+  document.querySelectorAll('.tab').forEach((b,i)=>{
+    const df=DATA.fechas_disponibles[i];
+    b.classList.toggle('active', df===f);
+  });
+  render();
+}
+
+function render(){
+  if(!DATA) return;
+  const tz=document.getElementById('tz').value;
+  const q=document.getElementById('q').value.toLowerCase();
+  const day=DATA.programacion_por_fecha[CUR];
+  let list=day?day.programacion.map(p=>({...p,titulo:clean(p.titulo)})):[];
+  
+  if(q) list=list.filter(p=>(p.titulo+' '+p.categoria).toLowerCase().includes(q));
+
+  const g1=list.filter(p=>!String(p.canal).includes('+'));
+  const g2=list.filter(p=>String(p.canal).includes('+'));
+
+  function renderChannel(id, arr, cntId){
+    const el=document.getElementById(id);
+    [...el.querySelectorAll('.p,.now')].forEach(n=>n.remove());
+    document.getElementById(cntId).textContent=`${arr.length} prog.`;
+
+    if(!arr.length){
+      const div=document.createElement('div');
+      div.style.cssText='padding:30px;text-align:center;color:#8aa0c2;font-size:12px';
+      div.innerHTML='Sin programación<br><small>Revisa programacion.json</small>';
+      el.appendChild(div);
+      return;
+    }
+
+    // 現在時刻ライン
+    const todayStr=new Date().toISOString().slice(0,10);
+    if(CUR===todayStr){
+      const now=new Date();
+      const nowMin=now.getHours()*60+now.getMinutes();
+      let from6=nowMin-360;
+      if(from6>=0 && from6<24*60){
+        const nowEl=document.createElement('div');
+        nowEl.className='now';
+        nowEl.style.top=36+from6+'px';
+        el.appendChild(nowEl);
+      }
+    }
+
+    arr.forEach((p,i)=>{
+      const [h,m]=p.hora_pyt.split(':').map(Number);
+      let from6=(h*60+m)-360; // 06:00スタート
+      if(h<6) from6+=1440-360;
+      const next=arr[i+1];
+      let dur=60;
+      if(next){
+        const [h2,m2]=next.hora_pyt.split(':').map(Number);
+        let endMin=h2*60+m2;
+        if(endMin<=h*60+m) endMin+=1440;
+        dur=Math.min(150,Math.max(30,endMin-(h*60+m)));
+      }
+      const conv=convertTime(p.hora_pyt, CUR, tz);
+      const isPastDay=CUR < todayStr;
+      
+      const d=document.createElement('div');
+      d.className='p'+(p.en_vivo?' live':'')+(isPastDay?' past':'');
+      d.style.top=36+from6+'px';
+      d.style.height=dur-6+'px';
+      d.innerHTML=`
+        <div class="hora">${p.hora_pyt} ${p.en_vivo?'<span class="badge live">VIVO</span>':''} <span class="badge cat">${p.categoria||''}</span></div>
+        <div class="tit">${p.titulo}</div>
+        <div class="conv">→ ${conv.ds} ${conv.ts} ${tz.split('/').pop()} ${conv.shift?`<span class="shift ${conv.shift>0?'pos':'neg'}">${conv.label}</span>`:''}</div>
+      `;
+      el.appendChild(d);
+    });
+  }
+
+  renderChannel('c1', g1, 'cnt1');
+  renderChannel('c2', g2, 'cnt2');
+}
+
+document.getElementById('tz').addEventListener('change', render);
+document.getElementById('q').addEventListener('input', render);
+
+load();
+</script>
+</body>
+</html>

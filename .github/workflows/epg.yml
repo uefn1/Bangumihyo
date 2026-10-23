@@ -13,14 +13,18 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # pushエラー対策
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
       - run: python scripts/fetch.py
-      - run: |
+      - name: Commit
+        run: |
           git config user.name "bot"
           git config user.email "bot@users.noreply.github.com"
+          git pull --rebase origin main || true
           git add docs/
-          git commit -m "update" || true
-          git push
+          git commit -m "update" || echo "no changes"
+          git push || (git pull --rebase origin main && git push)

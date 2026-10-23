@@ -1,0 +1,86 @@
+{
+  "fecha": "2026-10-24",
+  "dia_semana": "Saturday",
+  "programacion": [
+    {
+      "hora_pyt": "06:00",
+      "titulo": "El Tablón",
+      "categoria": "Debate",
+      "canal": " 【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+      "en_vivo": false,
+      "fuente": "tinyllama-fallback"
+    },
+    {
+      "hora_pyt": "08:00",
+      "titulo": "El Tablón - Repetición",
+      "categoria": "Repetición",
+      "canal": " 【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+      "en_vivo": false,
+      "fuente": "tinyllama-fallback"
+    },
+    {
+      "hora_pyt": "10:00",
+      "titulo": "Fútbol a lo Grande - Previa",
+      "categoria": "Debate",
+      "canal": " 【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+      "en_vivo": false,
+      "fuente": "tinyllama-fallback"
+    },
+    {
+      "hora_pyt": "12:00",
+      "titulo": "Fútbol a lo Grande",
+      "categoria": "Debate",
+      "canal": " 【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+      "en_vivo": false,
+      "fuente": "tinyllama-fallback"
+    },
+    {
+      "hora_pyt": "14:00",
+      "titulo": "【entity-Tigo Sports¦canonical_name=Tigo Sports】 Noticias Mediodía",
+      "categoria": "Noticias",
+      "canal": " 【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+      "en_vivo": false,
+      "fuente": "tinyllama-fallback"
+    },
+    {
+      "hora_pyt": "15:00",
+      "titulo": "Primera División - Guaraní vs Libertad",
+      "categoria": "Fútbol",
+      "en_vivo": true,
+      "canal": " 【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+      "fuente": "tinyllama-fallback"
+    },
+    {
+      "hora_pyt": "17:00",
+      "titulo": "La Previa",
+      "categoria": "Previa",
+      "canal": " 【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+      "en_vivo": false,
+      "fuente": "tinyllama-fallback"
+    },
+    {
+      "hora_pyt": "19:30",
+      "titulo": "Olimpia vs Cerro Porteño",
+      "categoria": "Fútbol",
+      "en_vivo": true,
+      "canal": " 【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+      "fuente": "tinyllama-fallback"
+    },
+    {
+      "hora_pyt": "21:30",
+      "titulo": "Tercer Tiempo",
+      "categoria": "Debate",
+      "canal": " 【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+      "en_vivo": false,
+      "fuente": "tinyllama-fallback"
+    },
+    {
+      "hora_pyt": "22:30",
+      "titulo": " 【entity-Tigo Sports¦canonical_name=Tigo Sports】 Noticias Noche",
+      "categoria": "Noticias",
+      "canal": " 【entity-Tigo Sports¦canonical_name=Tigo Sports】",
+      "en_vivo": false,
+      "fuente": "tinyllama-fallback"
+    }
+  ]
+}

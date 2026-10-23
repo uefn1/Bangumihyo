@@ -4,27 +4,74 @@
   "programacion": [
     {
       "hora_pyt": "06:00",
-      "titulo": "El Tablon",
-      "categoria": "Fútbol",
+      "titulo": "El Tablón",
+      "categoria": "Debate",
       "canal": " Tigo Sports",
       "en_vivo": false,
-      "fuente": "tinyllama"
+      "fuente": "qwen2:0.5b-fallback"
+    },
+    {
+      "hora_pyt": "08:00",
+      "titulo": "El Tablón - Repetición",
+      "categoria": "Repetición",
+      "canal": " Tigo Sports",
+      "en_vivo": false
+    },
+    {
+      "hora_pyt": "10:00",
+      "titulo": "Fútbol a lo Grande - Previa",
+      "categoria": "Debate",
+      "canal": " Tigo Sports",
+      "en_vivo": false
+    },
+    {
+      "hora_pyt": "12:00",
+      "titulo": "Fútbol a lo Grande",
+      "categoria": "Debate",
+      "canal": " Tigo Sports",
+      "en_vivo": false
+    },
+    {
+      "hora_pyt": "14:00",
+      "titulo": " Tigo Sports Noticias Mediodía",
+      "categoria": "Noticias",
+      "canal": " Tigo Sports",
+      "en_vivo": false
     },
     {
       "hora_pyt": "15:00",
-      "titulo": "Guarani vs Club Libertad",
+      "titulo": "Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
       "categoria": "Fútbol",
       "canal": " Tigo Sports",
-      "en_vivo": true,
-      "fuente": "tinyllama"
+      "en_vivo": true
+    },
+    {
+      "hora_pyt": "17:00",
+      "titulo": "La Previa - Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+      "categoria": "Previa",
+      "canal": " Tigo Sports",
+      "en_vivo": false
     },
     {
       "hora_pyt": "19:30",
-      "titulo": "Olimpia vs Cerro",
+      "titulo": " 【entity-Olimpia¦canonical_name=Olimpia】 vs 【entity-Cerro Porteño¦canonical_name=Club Cerro Porteño】",
       "categoria": "Fútbol",
       "canal": " Tigo Sports",
-      "en_vivo": true,
-      "fuente": "tinyllama"
+      "en_vivo": true
+    },
+    {
+      "hora_pyt": "21:30",
+      "titulo": "Tercer Tiempo",
+      "categoria": "Debate",
+      "canal": " Tigo Sports",
+      "en_vivo": false
+    },
+    {
+      "hora_pyt": "22:30",
+      "titulo": " Tigo Sports Noticias Noche",
+      "categoria": "Noticias",
+      "canal": " Tigo Sports",
+      "en_vivo": false
     }
   ]
 }

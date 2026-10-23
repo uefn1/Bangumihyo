@@ -1,138 +1,163 @@
 import re, json, datetime, zoneinfo, os, requests, time
-from bs4 import BeautifulSoup
 
 PYT = zoneinfo.ZoneInfo("America/Asuncion")
 
-# Nitterインスタンス (snscrape 403の時のフォールバック)
-NITTERS = [
-    "https://nitter.poast.org",
-    "https://nitter.privacydev.net",
-    "https://nitter.net",
-    "https://nitter.1d4.us"
-]
-
-def fetch_via_snscrape():
-    try:
-        import snscrape.modules.twitter as sntwitter
-        tweets = []
-        for i, tw in enumerate(sntwitter.TwitterUserScraper("TigoSportsPY").get_items()):
-            if i >= 100: break
-            txt = tw.rawContent
-            if "vs" in txt.lower() or "en vivo" in txt.lower():
-                tweets.append({
-                    "date": tw.date.astimezone(PYT).isoformat(),
-                    "content": txt,
-                    "url": tw.url
-                })
-        if tweets:
-            print(f"snscrape success: {len(tweets)}")
-            return tweets
-    except Exception as e:
-        print(f"snscrape failed: {e}")
-    return []
-
-def fetch_via_nitter():
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-    for base in NITTERS:
+def fetch_via_fxtwitter():
+    """FixTweet API - GitHub Actionsからでも動く"""
+    tweets = []
+    # 1. ユーザーのツイートを取得
+    urls = [
+        "https://api.fxtwitter.com/TigoSportsPY",
+        "https://api.vxtwitter.com/TigoSportsPY"
+    ]
+    headers = {"User-Agent": "Mozilla/5.0"}
+    
+    for api_url in urls:
         try:
-            url = f"{base}/TigoSportsPY"
-            print(f"Trying {url}")
-            r = requests.get(url, headers=headers, timeout=20)
+            print(f"Trying {api_url}")
+            r = requests.get(api_url, headers=headers, timeout=30)
+            print(f"Status {r.status_code}")
             if r.status_code != 200:
-                print(f"{base} status {r.status_code}")
+                print(r.text[:500])
                 continue
-            soup = BeautifulSoup(r.text, "html.parser")
-            tweets = []
-            for item in soup.select(".timeline-item")[:50]:
-                content_el = item.select_one(".tweet-content")
-                if not content_el: continue
-                txt = content_el.get_text(" ", strip=True)
-                if "vs" not in txt.lower() and "en vivo" not in txt.lower(): continue
-                date_el = item.select_one(".tweet-date a")
-                link = date_el["href"] if date_el else ""
-                full_url = f"https://twitter.com{link}" if link else f"{base}/TigoSportsPY"
-                # 日付は今の日付で代用 (Nitterの時間はパースが不安定)
-                tweets.append({
-                    "date": datetime.datetime.now(PYT).isoformat(),
-                    "content": txt,
-                    "url": full_url
-                })
+            
+            data = r.json()
+            # fxtwitterの構造
+            user_tweets = data.get("user", {}).get("tweets", []) or data.get("tweets", []) or []
+            # 別の構造の場合
+            if not user_tweets and "timeline" in data:
+                user_tweets = data["timeline"]
+            
+            for tw in user_tweets[:100]:
+                # twはdictかstr
+                if isinstance(tw, dict):
+                    text = tw.get("text", "") or tw.get("rawContent", "") or ""
+                    tw_id = tw.get("id", "")
+                    created = tw.get("created_at", "") or tw.get("created_timestamp", "")
+                else:
+                    text = str(tw)
+                    tw_id = ""
+                    created = ""
+                
+                if "vs" in text.lower() or "en vivo" in text.lower():
+                    tweets.append({
+                        "date": datetime.datetime.now(PYT).isoformat(),
+                        "content": text,
+                        "url": f"https://twitter.com/TigoSportsPY/status/{tw_id}" if tw_id else "https://twitter.com/TigoSportsPY"
+                    })
+            
             if tweets:
-                print(f"Nitter {base} success: {len(tweets)}")
+                print(f"fxtwitter success {len(tweets)}")
                 return tweets
+                
         except Exception as e:
-            print(f"Nitter {base} failed: {e}")
-            time.sleep(1)
+            print(f"fxtwitter {api_url} failed: {e}")
+            import traceback
+            traceback.print_exc()
             continue
+    
     return []
 
-def to_programacion(tweets):
+def fetch_via_syndication():
+    """Twitter syndication - まだ生きている古いAPI"""
+    try:
+        # TigoSportsPYのIDは要調査だが、usernameで試す
+        url = "https://syndication.twitter.com/srv/timeline-profile/screen-name/TigoSportsPY?showReplies=false"
+        r = requests.get(url, timeout=20)
+        if r.status_code == 200:
+            data = r.json()
+            tweets = []
+            for tw in data.get("body", [])[:50]:
+                txt = tw.get("full_text", "") or tw.get("text", "")
+                if "vs" in txt.lower():
+                    tweets.append({
+                        "date": datetime.datetime.now(PYT).isoformat(),
+                        "content": txt,
+                        "url": "https://twitter.com/TigoSportsPY"
+                    })
+            if tweets:
+                return tweets
+    except Exception as e:
+        print(f"syndication failed {e}")
+    return []
+
+def fetch_via_nitter_scraper():
+    """最後の手段: nitterインスタンスを総当たり"""
+    # 2026年10月時点で生きてる可能性があるインスタンス
+    instances = [
+        "https://nitter.poast.org",
+        "https://nitter.privacydev.net",
+    ]
+    # GitHub ActionsではDNS解決できないことが多いのでスキップ
+    return []
+
+if __name__ == "__main__":
+    print("=== Fetch start ===")
+    tweets = fetch_via_fxtwitter()
+    
+    if not tweets:
+        tweets = fetch_via_syndication()
+    
+    print(f"Total tweets: {len(tweets)}")
+    
+    # --- 0件でも番組表を空にしない ---
+    prog_path = "docs/programacion.json"
+    
+    # パース
     by_date = {}
     for t in tweets:
-        try:
-            dt = datetime.datetime.fromisoformat(t["date"])
-        except:
-            dt = datetime.datetime.now(PYT)
-        fecha = dt.strftime("%Y-%m-%d")
         m = re.search(r'(\d{1,2}:\d{2})', t["content"])
-        if not m: 
-            # 時間がない投稿は 19:30 と仮置きしない -> スキップ
-            # ただしタイトルにvsがあれば時間なしでも入れる
-            if "vs" not in t["content"].lower():
-                continue
-            hora = "19:30"
-        else:
-            hora = m.group(1)
-        
+        hora = m.group(1) if m else "19:30"
+        if "vs" not in t["content"].lower() and m is None:
+            continue
         title = re.sub(r'https?://\S+|#\S+', '', t["content"]).strip()[:120]
+        dt = datetime.datetime.now(PYT)
+        fecha = dt.strftime("%Y-%m-%d")
         by_date.setdefault(fecha, []).append({
             "hora_pyt": hora,
             "titulo": title,
             "en_vivo": True,
-            "canal": "Tigo Sports",
+            "canal": "【entity-Tigo Sports¦canonical_name=Tigo Sports】",
             "fecha_pyt": fecha,
             "url_x": t["url"]
         })
-    for d in by_date:
-        by_date[d] = sorted({p["hora_pyt"]: p for p in sorted(by_date[d], key=lambda x: x["hora_pyt"])}.values(), key=lambda x: x["hora_pyt"])
-    return by_date
-
-if __name__ == "__main__":
-    tweets = fetch_via_snscrape()
-    if not tweets:
-        print("snscrape 403 -> fallback to Nitter")
-        tweets = fetch_via_nitter()
     
-    print(f"Total tweets: {len(tweets)}")
-    by_date = to_programacion(tweets)
+    if len(tweets) == 0:
+        print("No tweets found - keeping old file if exists")
+        if os.path.exists(prog_path):
+            # 古いファイルを維持して終了 (0件で上書きしない)
+            with open(prog_path,"r",encoding="utf-8") as f:
+                old = json.load(f)
+            # 更新日だけ変える
+            old["fecha_actualizacion"] = datetime.datetime.now(PYT).isoformat()
+            old["debug"] = "X fetch failed (403), kept old data"
+            with open(prog_path,"w",encoding="utf-8") as f:
+                json.dump(old, f, ensure_ascii=False, indent=2)
+            print("Kept old file")
+            exit(0)
+        else:
+            # 初回で0件ならダミーを作らない - サンプルを作る
+            now = datetime.datetime.now(PYT).date().isoformat()
+            by_date = {now: [{"hora_pyt":"19:30","titulo":"Programación no disponible - X bloqueado (403)","en_vivo":False,"canal":"Tigo Sports","fecha_pyt":now,"url_x":""}]}
     
     now = datetime.datetime.now(PYT).date()
     for i in range(-2,5):
         d = (now + datetime.timedelta(days=i)).isoformat()
         by_date.setdefault(d, [])
     
-    # Xが0件でも空ファイルを作らないように、最後の成功データを保持
-    prog_path = "docs/programacion.json"
-    if len(tweets) == 0 and os.path.exists(prog_path):
-        print("No new tweets, keep old file")
-        # 古いファイルを維持
-        exit(0)
-    
-    all_progs = []
-    for d in sorted(by_date.keys()):
-        all_progs.extend(by_date[d])
-
+    all_progs = [p for progs in by_date.values() for p in progs]
     out = {
         "fecha_actualizacion": datetime.datetime.now(PYT).isoformat(),
-        "fuente": "X @TigoSportsPY via snscrape+nitter fallback",
+        "fuente": "X @TigoSportsPY via fxtwitter",
         "fechas_disponibles": sorted(by_date.keys()),
         "programacion_por_fecha": {d: {"fecha": d, "programacion": by_date[d]} for d in sorted(by_date.keys())},
         "programacion": by_date.get(now.isoformat(), []),
         "epg": [{"start_pyt": f"{p['fecha_pyt']} {p['hora_pyt']}", "title": p["titulo"], "live": p["en_vivo"]} for p in all_progs],
-        "debug_tweets_count": len(tweets)
+        "debug_tweets_count": len(tweets),
+        "debug_note": "If 0, X is blocking. Use manual mode."
     }
     
     os.makedirs("docs", exist_ok=True)
     with open(prog_path,"w",encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
-    print(f"done {len(all_progs)} programs")
+    print(f"done {len(all_progs)}")

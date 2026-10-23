@@ -1,5 +1,5 @@
 {
-  "fecha_actualizacion": "2026-10-23T10:54:01.794723-03:00",
+  "fecha_actualizacion": "2026-10-23T10:55:26.015906-03:00",
   "fuente": "X @TigoSportsPY via snscrape+nitter fallback",
   "fechas_disponibles": [
     "2026-10-21",
@@ -43,5 +43,6 @@
   "programacion": [],
   "epg": [],
   "debug_tweets_count": 0,
-  "debug": "X fetch failed (403), kept old data"
+  "debug": "X fetch failed (403), kept old data",
+  "debug_last_error": "fxtwitter 403/cloudflare, kept old"
 }

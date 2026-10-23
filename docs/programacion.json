@@ -1,6 +1,7 @@
 {
-  "fecha_actualizacion": "2026-10-23T13:11:44.659103Z",
-  "rango": "2026-10-21 to 2026-10-27 (7 días desde hace 2 días)",
+  "fecha_actualizacion": "2026-10-23T10:22:32.081900-03:00",
+  "timezone": "America/Asuncion",
+  "rango": "2026-10-21 to 2026-10-27 (7 días PYT)",
   "fechas_disponibles": [
     "2026-10-21",
     "2026-10-22",
@@ -13,7 +14,7 @@
   "programacion_por_fecha": {
     "2026-10-21": {
       "fecha": "2026-10-21",
-      "dia_semana": "Wednesday",
+      "fecha_pyt": "2026-10-21",
       "programacion": [
         {
           "hora_pyt": "06:00",
@@ -21,76 +22,126 @@
           "categoria": "Debate",
           "canal": " Tigo Sports",
           "en_vivo": false,
-          "fuente": "qwen2:0.5b-fallback"
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-21",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "08:00",
-          "titulo": "El Tablón - Repetición",
+          "titulo": "El Tablón - Repetición 2026-10-21",
           "categoria": "Repetición",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-21",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "10:00",
           "titulo": "Fútbol a lo Grande - Previa",
           "categoria": "Debate",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-21",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "12:00",
           "titulo": "Fútbol a lo Grande",
           "categoria": "Debate",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-21",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "14:00",
           "titulo": " Tigo Sports Noticias Mediodía",
           "categoria": "Noticias",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-21",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "15:00",
-          "titulo": "Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+          "titulo": "Primera División - Cerro Porteño vs Nacional",
           "categoria": "Fútbol",
+          "en_vivo": true,
           "canal": " Tigo Sports",
-          "en_vivo": true
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-21",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "17:00",
-          "titulo": "La Previa - Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+          "titulo": "La Previa - Libertad vs Guaraní",
           "categoria": "Previa",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-21",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "19:30",
-          "titulo": " 【entity-Olimpia¦canonical_name=Olimpia】 vs 【entity-Cerro Porteño¦canonical_name=Club Cerro Porteño】",
+          "titulo": "Primera División - Libertad vs Guaraní",
           "categoria": "Fútbol",
+          "en_vivo": true,
           "canal": " Tigo Sports",
-          "en_vivo": true
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-21",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "21:30",
           "titulo": "Tercer Tiempo",
           "categoria": "Debate",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-21",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "22:30",
           "titulo": " Tigo Sports Noticias Noche",
           "categoria": "Noticias",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-21",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         }
-      ]
+      ],
+      "ai_success": false
     },
     "2026-10-22": {
       "fecha": "2026-10-22",
-      "dia_semana": "Thursday",
+      "fecha_pyt": "2026-10-22",
       "programacion": [
         {
           "hora_pyt": "06:00",
@@ -98,76 +149,126 @@
           "categoria": "Debate",
           "canal": " Tigo Sports",
           "en_vivo": false,
-          "fuente": "qwen2:0.5b-fallback"
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-22",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "08:00",
-          "titulo": "El Tablón - Repetición",
+          "titulo": "El Tablón - Repetición 2026-10-22",
           "categoria": "Repetición",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-22",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "10:00",
           "titulo": "Fútbol a lo Grande - Previa",
           "categoria": "Debate",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-22",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "12:00",
           "titulo": "Fútbol a lo Grande",
           "categoria": "Debate",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-22",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "14:00",
           "titulo": " Tigo Sports Noticias Mediodía",
           "categoria": "Noticias",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-22",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "15:00",
-          "titulo": "Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+          "titulo": "Primera División -  Olimpia vs Sportivo Luqueño",
           "categoria": "Fútbol",
+          "en_vivo": true,
           "canal": " Tigo Sports",
-          "en_vivo": true
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-22",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "17:00",
-          "titulo": "La Previa - Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+          "titulo": "La Previa - Nacional vs Guaraní",
           "categoria": "Previa",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-22",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "19:30",
-          "titulo": " 【entity-Olimpia¦canonical_name=Olimpia】 vs 【entity-Cerro Porteño¦canonical_name=Club Cerro Porteño】",
+          "titulo": "Primera División - Nacional vs Guaraní",
           "categoria": "Fútbol",
+          "en_vivo": true,
           "canal": " Tigo Sports",
-          "en_vivo": true
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-22",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "21:30",
           "titulo": "Tercer Tiempo",
           "categoria": "Debate",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-22",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "22:30",
           "titulo": " Tigo Sports Noticias Noche",
           "categoria": "Noticias",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-22",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         }
-      ]
+      ],
+      "ai_success": false
     },
     "2026-10-23": {
       "fecha": "2026-10-23",
-      "dia_semana": "Friday",
+      "fecha_pyt": "2026-10-23",
       "programacion": [
         {
           "hora_pyt": "06:00",
@@ -175,76 +276,126 @@
           "categoria": "Debate",
           "canal": " Tigo Sports",
           "en_vivo": false,
-          "fuente": "qwen2:0.5b-fallback"
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-23",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "08:00",
-          "titulo": "El Tablón - Repetición",
+          "titulo": "El Tablón - Repetición 2026-10-23",
           "categoria": "Repetición",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-23",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "10:00",
           "titulo": "Fútbol a lo Grande - Previa",
           "categoria": "Debate",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-23",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "12:00",
           "titulo": "Fútbol a lo Grande",
           "categoria": "Debate",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-23",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "14:00",
           "titulo": " Tigo Sports Noticias Mediodía",
           "categoria": "Noticias",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-23",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "15:00",
-          "titulo": "Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+          "titulo": "Primera División - Libertad vs Olimpia",
           "categoria": "Fútbol",
+          "en_vivo": true,
           "canal": " Tigo Sports",
-          "en_vivo": true
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-23",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "17:00",
-          "titulo": "La Previa - Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+          "titulo": "La Previa - Cerro Porteño vs Guaraní",
           "categoria": "Previa",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-23",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "19:30",
-          "titulo": " 【entity-Olimpia¦canonical_name=Olimpia】 vs 【entity-Cerro Porteño¦canonical_name=Club Cerro Porteño】",
+          "titulo": "Primera División - Cerro Porteño vs Guaraní",
           "categoria": "Fútbol",
+          "en_vivo": true,
           "canal": " Tigo Sports",
-          "en_vivo": true
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-23",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "21:30",
           "titulo": "Tercer Tiempo",
           "categoria": "Debate",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-23",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "22:30",
           "titulo": " Tigo Sports Noticias Noche",
           "categoria": "Noticias",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-23",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         }
-      ]
+      ],
+      "ai_success": false
     },
     "2026-10-24": {
       "fecha": "2026-10-24",
-      "dia_semana": "Saturday",
+      "fecha_pyt": "2026-10-24",
       "programacion": [
         {
           "hora_pyt": "06:00",
@@ -252,76 +403,138 @@
           "categoria": "Debate",
           "canal": " Tigo Sports",
           "en_vivo": false,
-          "fuente": "qwen2:0.5b-fallback"
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-24",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "08:00",
-          "titulo": "El Tablón - Repetición",
+          "titulo": "El Tablón - Repetición 2026-10-24",
           "categoria": "Repetición",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-24",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "10:00",
           "titulo": "Fútbol a lo Grande - Previa",
           "categoria": "Debate",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-24",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "12:00",
           "titulo": "Fútbol a lo Grande",
           "categoria": "Debate",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-24",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "14:00",
           "titulo": " Tigo Sports Noticias Mediodía",
           "categoria": "Noticias",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-24",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "15:00",
-          "titulo": "Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+          "titulo": "Primera División - Sportivo Trinidense vs Libertad",
           "categoria": "Fútbol",
+          "en_vivo": true,
           "canal": " Tigo Sports",
-          "en_vivo": true
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-24",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "17:00",
-          "titulo": "La Previa - Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+          "titulo": "La Previa - Guaraní vs Olimpia",
           "categoria": "Previa",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-24",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "19:30",
-          "titulo": " 【entity-Olimpia¦canonical_name=Olimpia】 vs 【entity-Cerro Porteño¦canonical_name=Club Cerro Porteño】",
+          "titulo": "Primera División - Guaraní vs Olimpia",
           "categoria": "Fútbol",
+          "en_vivo": true,
           "canal": " Tigo Sports",
-          "en_vivo": true
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-24",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "21:30",
           "titulo": "Tercer Tiempo",
           "categoria": "Debate",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-24",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "22:30",
           "titulo": " Tigo Sports Noticias Noche",
           "categoria": "Noticias",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-24",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
+        },
+        {
+          "hora_pyt": "23:30",
+          "titulo": "Fútbol Femenino - Resumen",
+          "categoria": "Fútbol Femenino",
+          "en_vivo": false,
+          "canal": " Tigo Sports",
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-24",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         }
-      ]
+      ],
+      "ai_success": false
     },
     "2026-10-25": {
       "fecha": "2026-10-25",
-      "dia_semana": "Sunday",
+      "fecha_pyt": "2026-10-25",
       "programacion": [
         {
           "hora_pyt": "06:00",
@@ -329,76 +542,138 @@
           "categoria": "Debate",
           "canal": " Tigo Sports",
           "en_vivo": false,
-          "fuente": "qwen2:0.5b-fallback"
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-25",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "08:00",
-          "titulo": "El Tablón - Repetición",
+          "titulo": "El Tablón - Repetición 2026-10-25",
           "categoria": "Repetición",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-25",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "10:00",
           "titulo": "Fútbol a lo Grande - Previa",
           "categoria": "Debate",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-25",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "12:00",
           "titulo": "Fútbol a lo Grande",
           "categoria": "Debate",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-25",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "14:00",
           "titulo": " Tigo Sports Noticias Mediodía",
           "categoria": "Noticias",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-25",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "15:00",
-          "titulo": "Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+          "titulo": "Primera División - Guaraní vs Libertad",
           "categoria": "Fútbol",
+          "en_vivo": true,
           "canal": " Tigo Sports",
-          "en_vivo": true
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-25",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "17:00",
-          "titulo": "La Previa - Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+          "titulo": "La Previa -  Olimpia vs Cerro Porteño",
           "categoria": "Previa",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-25",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "19:30",
-          "titulo": " 【entity-Olimpia¦canonical_name=Olimpia】 vs 【entity-Cerro Porteño¦canonical_name=Club Cerro Porteño】",
+          "titulo": "Primera División -  Olimpia vs Cerro Porteño",
           "categoria": "Fútbol",
+          "en_vivo": true,
           "canal": " Tigo Sports",
-          "en_vivo": true
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-25",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "21:30",
           "titulo": "Tercer Tiempo",
           "categoria": "Debate",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-25",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "22:30",
           "titulo": " Tigo Sports Noticias Noche",
           "categoria": "Noticias",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-25",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
+        },
+        {
+          "hora_pyt": "23:30",
+          "titulo": "Fútbol Femenino - Resumen",
+          "categoria": "Fútbol Femenino",
+          "en_vivo": false,
+          "canal": " Tigo Sports",
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-25",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         }
-      ]
+      ],
+      "ai_success": false
     },
     "2026-10-26": {
       "fecha": "2026-10-26",
-      "dia_semana": "Monday",
+      "fecha_pyt": "2026-10-26",
       "programacion": [
         {
           "hora_pyt": "06:00",
@@ -406,76 +681,126 @@
           "categoria": "Debate",
           "canal": " Tigo Sports",
           "en_vivo": false,
-          "fuente": "qwen2:0.5b-fallback"
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-26",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "08:00",
-          "titulo": "El Tablón - Repetición",
+          "titulo": "El Tablón - Repetición 2026-10-26",
           "categoria": "Repetición",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-26",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "10:00",
           "titulo": "Fútbol a lo Grande - Previa",
           "categoria": "Debate",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-26",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "12:00",
           "titulo": "Fútbol a lo Grande",
           "categoria": "Debate",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-26",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "14:00",
           "titulo": " Tigo Sports Noticias Mediodía",
           "categoria": "Noticias",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-26",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "15:00",
-          "titulo": "Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+          "titulo": "Primera División - Cerro Porteño vs Nacional",
           "categoria": "Fútbol",
+          "en_vivo": true,
           "canal": " Tigo Sports",
-          "en_vivo": true
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-26",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "17:00",
-          "titulo": "La Previa - Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+          "titulo": "La Previa - Libertad vs Guaraní",
           "categoria": "Previa",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-26",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "19:30",
-          "titulo": " 【entity-Olimpia¦canonical_name=Olimpia】 vs 【entity-Cerro Porteño¦canonical_name=Club Cerro Porteño】",
+          "titulo": "Primera División - Libertad vs Guaraní",
           "categoria": "Fútbol",
+          "en_vivo": true,
           "canal": " Tigo Sports",
-          "en_vivo": true
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-26",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "21:30",
           "titulo": "Tercer Tiempo",
           "categoria": "Debate",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-26",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "22:30",
           "titulo": " Tigo Sports Noticias Noche",
           "categoria": "Noticias",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-26",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         }
-      ]
+      ],
+      "ai_success": false
     },
     "2026-10-27": {
       "fecha": "2026-10-27",
-      "dia_semana": "Tuesday",
+      "fecha_pyt": "2026-10-27",
       "programacion": [
         {
           "hora_pyt": "06:00",
@@ -483,72 +808,122 @@
           "categoria": "Debate",
           "canal": " Tigo Sports",
           "en_vivo": false,
-          "fuente": "qwen2:0.5b-fallback"
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-27",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "08:00",
-          "titulo": "El Tablón - Repetición",
+          "titulo": "El Tablón - Repetición 2026-10-27",
           "categoria": "Repetición",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-27",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "10:00",
           "titulo": "Fútbol a lo Grande - Previa",
           "categoria": "Debate",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-27",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "12:00",
           "titulo": "Fútbol a lo Grande",
           "categoria": "Debate",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-27",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "14:00",
           "titulo": " Tigo Sports Noticias Mediodía",
           "categoria": "Noticias",
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "en_vivo": false,
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-27",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "15:00",
-          "titulo": "Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+          "titulo": "Primera División -  Olimpia vs Sportivo Luqueño",
           "categoria": "Fútbol",
+          "en_vivo": true,
           "canal": " Tigo Sports",
-          "en_vivo": true
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-27",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "17:00",
-          "titulo": "La Previa - Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+          "titulo": "La Previa - Nacional vs Guaraní",
           "categoria": "Previa",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-27",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "19:30",
-          "titulo": " 【entity-Olimpia¦canonical_name=Olimpia】 vs 【entity-Cerro Porteño¦canonical_name=Club Cerro Porteño】",
+          "titulo": "Primera División - Nacional vs Guaraní",
           "categoria": "Fútbol",
+          "en_vivo": true,
           "canal": " Tigo Sports",
-          "en_vivo": true
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-27",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "21:30",
           "titulo": "Tercer Tiempo",
           "categoria": "Debate",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-27",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         },
         {
           "hora_pyt": "22:30",
           "titulo": " Tigo Sports Noticias Noche",
           "categoria": "Noticias",
+          "en_vivo": false,
           "canal": " Tigo Sports",
-          "en_vivo": false
+          "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+          "fecha_pyt": "2026-10-27",
+          "timezone": "America/Asuncion",
+          "is_fallback": true,
+          "fallback_reason": "AI failed, dynamic generated"
         }
-      ]
+      ],
+      "ai_success": false
     }
   },
   "programacion": [
@@ -558,71 +933,126 @@
       "categoria": "Debate",
       "canal": " Tigo Sports",
       "en_vivo": false,
-      "fuente": "qwen2:0.5b-fallback"
+      "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+      "fecha_pyt": "2026-10-23",
+      "timezone": "America/Asuncion",
+      "is_fallback": true,
+      "fallback_reason": "AI failed, dynamic generated"
     },
     {
       "hora_pyt": "08:00",
-      "titulo": "El Tablón - Repetición",
+      "titulo": "El Tablón - Repetición 2026-10-23",
       "categoria": "Repetición",
       "canal": " Tigo Sports",
-      "en_vivo": false
+      "en_vivo": false,
+      "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+      "fecha_pyt": "2026-10-23",
+      "timezone": "America/Asuncion",
+      "is_fallback": true,
+      "fallback_reason": "AI failed, dynamic generated"
     },
     {
       "hora_pyt": "10:00",
       "titulo": "Fútbol a lo Grande - Previa",
       "categoria": "Debate",
       "canal": " Tigo Sports",
-      "en_vivo": false
+      "en_vivo": false,
+      "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+      "fecha_pyt": "2026-10-23",
+      "timezone": "America/Asuncion",
+      "is_fallback": true,
+      "fallback_reason": "AI failed, dynamic generated"
     },
     {
       "hora_pyt": "12:00",
       "titulo": "Fútbol a lo Grande",
       "categoria": "Debate",
       "canal": " Tigo Sports",
-      "en_vivo": false
+      "en_vivo": false,
+      "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+      "fecha_pyt": "2026-10-23",
+      "timezone": "America/Asuncion",
+      "is_fallback": true,
+      "fallback_reason": "AI failed, dynamic generated"
     },
     {
       "hora_pyt": "14:00",
       "titulo": " Tigo Sports Noticias Mediodía",
       "categoria": "Noticias",
       "canal": " Tigo Sports",
-      "en_vivo": false
+      "en_vivo": false,
+      "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+      "fecha_pyt": "2026-10-23",
+      "timezone": "America/Asuncion",
+      "is_fallback": true,
+      "fallback_reason": "AI failed, dynamic generated"
     },
     {
       "hora_pyt": "15:00",
-      "titulo": "Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+      "titulo": "Primera División - Libertad vs Olimpia",
       "categoria": "Fútbol",
+      "en_vivo": true,
       "canal": " Tigo Sports",
-      "en_vivo": true
+      "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+      "fecha_pyt": "2026-10-23",
+      "timezone": "America/Asuncion",
+      "is_fallback": true,
+      "fallback_reason": "AI failed, dynamic generated"
     },
     {
       "hora_pyt": "17:00",
-      "titulo": "La Previa - Guaraní vs 【entity-Libertad¦canonical_name=Club Libertad】",
+      "titulo": "La Previa - Cerro Porteño vs Guaraní",
       "categoria": "Previa",
+      "en_vivo": false,
       "canal": " Tigo Sports",
-      "en_vivo": false
+      "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+      "fecha_pyt": "2026-10-23",
+      "timezone": "America/Asuncion",
+      "is_fallback": true,
+      "fallback_reason": "AI failed, dynamic generated"
     },
     {
       "hora_pyt": "19:30",
-      "titulo": " 【entity-Olimpia¦canonical_name=Olimpia】 vs 【entity-Cerro Porteño¦canonical_name=Club Cerro Porteño】",
+      "titulo": "Primera División - Cerro Porteño vs Guaraní",
       "categoria": "Fútbol",
+      "en_vivo": true,
       "canal": " Tigo Sports",
-      "en_vivo": true
+      "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+      "fecha_pyt": "2026-10-23",
+      "timezone": "America/Asuncion",
+      "is_fallback": true,
+      "fallback_reason": "AI failed, dynamic generated"
     },
     {
       "hora_pyt": "21:30",
       "titulo": "Tercer Tiempo",
       "categoria": "Debate",
+      "en_vivo": false,
       "canal": " Tigo Sports",
-      "en_vivo": false
+      "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+      "fecha_pyt": "2026-10-23",
+      "timezone": "America/Asuncion",
+      "is_fallback": true,
+      "fallback_reason": "AI failed, dynamic generated"
     },
     {
       "hora_pyt": "22:30",
       "titulo": " Tigo Sports Noticias Noche",
       "categoria": "Noticias",
+      "en_vivo": false,
       "canal": " Tigo Sports",
-      "en_vivo": false
+      "fuente": "qwen2:0.5b-dynamic-fallback-attempt3",
+      "fecha_pyt": "2026-10-23",
+      "timezone": "America/Asuncion",
+      "is_fallback": true,
+      "fallback_reason": "AI failed, dynamic generated"
     }
   ],
-  "generator": "qwen2:0.5b local - 350MB"
+  "generator": "qwen2:0.5b - retry + dynamic fallback",
+  "stats": {
+    "ai_success": 0,
+    "dynamic_fallback": 7,
+    "total": 7
+  },
+  "nota": "Baseそのまま出力防止: fallbackは日付で対戦カードが変わる"
 }
